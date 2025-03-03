@@ -1,5 +1,6 @@
 import * as React from "react"
 import {
+  Cpu,
   Frame,
   GalleryVerticalEnd,
   Map,
@@ -21,8 +22,8 @@ import {
 // This is sample data.
 const data = {
   user: {
-    name: "shadcn",
-    email: "m@example.com",
+    name: "User Name",
+    email: "dinu.webdev@gmail.com",
     avatar: "/avatars/shadcn.jpg",
   },
   shops: [
@@ -36,7 +37,7 @@ const data = {
   [
       {
         "title": "Technology",
-        icon: PieChart, 
+        icon: Cpu, 
         "path": "/technology",
         "subcategories": [
           {
@@ -191,14 +192,15 @@ export function AppSidebar({
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        <TeamSwitcher teams={data.shops} />
+      <NavUser user={data.user} />
+        
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.category} />
         <NavProjects projects={data.pages} />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+      <TeamSwitcher teams={data.shops} />
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>
