@@ -1,0 +1,129 @@
+
+[
+    {
+      "title": "Technology",
+      "icon": "Frame",
+      "path": "/technology",
+      "subcategories": [
+        {
+          "title": "Artificial Intelligence",
+          "path": "/technology/ai"
+        },
+        {
+          "title": "Blockchain",
+          "path": "/technology/blockchain"
+        },
+        {
+          "title": "Cybersecurity",
+          "path": "/technology/cybersecurity"
+        }
+      ]
+    },
+    {
+      "title": "Lifestyle",
+      "icon": "Frame",
+      "path": "/lifestyle",
+      "subcategories": [
+        {
+          "title": "Health & Wellness",
+          "path": "/lifestyle/health"
+        },
+        {
+          "title": "Travel",
+          "path": "/lifestyle/travel"
+        },
+        {
+          "title": "Food & Drinks",
+          "path": "/lifestyle/food-drinks",
+          "subcategories": [
+            {
+              "title": "Vegan Recipes",
+              "path": "/lifestyle/food-drinks/vegan"
+            },
+            {
+              "title": "Cocktail Recipes",
+              "path": "/lifestyle/food-drinks/cocktails"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Entertainment",
+      "icon": "Frame",
+      "path": "/entertainment",
+      "subcategories": [
+        {
+          "title": "Movies",
+          "path": "/entertainment/movies"
+        },
+        {
+          "title": "Music",
+          "path": "/entertainment/music"
+        },
+        {
+          "title": "Gaming",
+          "path": "/entertainment/gaming",
+          "subcategories": [
+            {
+              "title": "PC Games",
+              "path": "/entertainment/gaming/pc"
+            },
+            {
+              "title": "Console Games",
+              "path": "/entertainment/gaming/console"
+            },
+            {
+              "title": "Mobile Games",
+              "path": "/entertainment/gaming/mobile"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Education",
+      "icon": "Frame",
+      "path": "/education",
+      "subcategories": [
+        {
+          "title": "Online Courses",
+          "path": "/education/online-courses"
+        },
+        {
+          "title": "Certifications",
+          "path": "/education/certifications"
+        },
+        {
+          "title": "E-books",
+          "path": "/education/ebooks"
+        }
+      ]
+    },
+    {
+      "title": "Business",
+      "icon": "Frame",
+      "path": "/business",
+      "subcategories": [
+        {
+          "title": "Startups",
+          "path": "/business/startups"
+        },
+        {
+          "title": "Finance",
+          "path": "/business/finance",
+          "subcategories": [
+            {
+              "title": "Investing",
+              "path": "/business/finance/investing"
+            },
+            {
+              "title": "Cryptocurrency",
+              "path": "/business/finance/crypto"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+  
