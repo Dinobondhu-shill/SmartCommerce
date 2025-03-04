@@ -28,7 +28,7 @@ const data = {
   },
   shops: [
     {
-      name: "Reverse",
+      name: "Whatever",
       logo: GalleryVerticalEnd,
     }
    
