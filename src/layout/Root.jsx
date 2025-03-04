@@ -1,5 +1,6 @@
 import { AppSidebar } from "@/components/app-sidebar"
 import CustomNav from "@/components/CustomNav";
+import MobileMenu from "@/components/MobileMenu";
 import Nav from "@/components/Nav";
 import { Separator } from "@/components/ui/separator"
 import {
@@ -30,6 +31,7 @@ const Root = () => {
             </div>
           </div>
         </SidebarInset>
+        
       </SidebarProvider>
       </>
     );

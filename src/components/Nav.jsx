@@ -3,26 +3,34 @@ import logo from '../../public/whatever.png'
 import { SidebarTrigger } from './ui/sidebar';
 import { Input } from './ui/input';
 import { Button } from './ui/button';
-import { ChevronRight, GitCompareArrows, Heart, ShoppingBag } from 'lucide-react';
+import { ChevronRight, GitCompareArrows, Heart, LogIn, Search, ShoppingBag } from 'lucide-react';
+import MobileMenu from './MobileMenu';
 
 const Nav = () => {
     return (
        <div className='flex items-center bg-[#a96bdf5f] justify-between py-1.5' >
-        <div className='md:pl-3 md:pt-2 '>
-            <div className='flex md:hidden'>
+        <div className='md:pl-3 md:pt-2 flex gap-3'>
+            <div className='block text-xl md:hidden'>
             <SidebarTrigger className="-ml-0" />
             </div>
-           <img src={logo} alt="whatever logo" className=' h-8 md:h-10'/> 
+           <img src={logo} alt="whatever logo" className=' h-8 md:h-8'/> 
         </div>
-        <div className="flex w-full max-w-sm items-center space-x-2 relative">
+        <div className="hidden md:flex w-full max-w-sm items-center space-x-2 relative">
             <Input type="text" placeholder="Search anything..." className="outline-0 border-gray-400 " />
-            <Button className="absolute right-1 bg-[#5782dfe4]"  variant="" type="submit"><ChevronRight /></Button>
+            <Button className="absolute right-1 bg-[#5782dfe4]"  variant="" type="submit">
+                <Search  className='right-4 top-1.5 text-[8px]'/>
+                </Button>
         </div>
         <div className='hidden md:flex items-center gap-3 pr-3 text-[#5782dff6]'>
             <Heart />
             <GitCompareArrows />
             <ShoppingBag />
         </div>
+       <div className='flex gap-3 pr-3 md:hidden relative'>
+       <Input type="text" placeholder="Search anything..." className="max-w-44 border-gray-400 " />
+       <Search  className='absolute right-4 top-1.5 text-[8px]'/>
+       </div>
+       <MobileMenu />
        </div >
     );
 };
