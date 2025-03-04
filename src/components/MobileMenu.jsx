@@ -2,7 +2,7 @@ import { CircleUser, House, MessageCircle, ShoppingCart, Store } from "lucide-re
 
 const MobileMenu = () => {
   return (
-    <div className="bg-[#6bdf7dd6] h-12  w-full fixed bottom-0 flex justify-between items-center px-1.5">
+    <div className="bg-[#6bdf7dd6] h-12  w-full fixed bottom-0 flex md:hidden justify-between items-center px-1.5">
        
        <div className="flex flex-col items-center ">
       <MessageCircle />
