@@ -15,6 +15,10 @@ import ErrorPage from "./pages/Error";
 import ProfileLayout from "./layout/ProfileLayout";
 import { SidebarProvider } from "./components/ui/sidebar";
 import MyProfile from "./pages/Profile/MyProfile";
+import AddressBook from "./pages/Profile/AddressBook";
+import CustomerWallet from "./pages/Profile/Wallet";
+import MyReturn from "./pages/Profile/MyReturn";
+import MyCancellations from "./pages/Profile/MyCancelllation";
 
 
 
@@ -78,14 +82,14 @@ export const router = createBrowserRouter([
   },
   {
     path: '/profile',
-    element:(
-      <SidebarProvider className="block"> {/* Separate provider for Profile Layout */}
-        <ProfileLayout />
-      </SidebarProvider>
-    ),
+    element:(<SidebarProvider className="block"> <ProfileLayout /></SidebarProvider>),
     errorElement:<ErrorPage />,
     children: [
-      { index: true, element: <MyProfile /> },
+      { path:'/profile', element: <MyProfile /> },
+      {path:'/profile/address-book', element:<AddressBook />},
+      {path:"/profile/wallet", element:<CustomerWallet />},
+      {path:'/profile/my-return', element:<MyReturn />},
+      {path:'/profile/my-cancellation', element:<MyCancellations />},
     ]
   }
 ])

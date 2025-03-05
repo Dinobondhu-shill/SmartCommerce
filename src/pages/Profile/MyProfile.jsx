@@ -162,7 +162,7 @@ const MyProfile = () => {
                 <div className="flex space-x-3">
                   <button
                     onClick={handleSave}
-                    className="flex-1 bg-teal-600 text-white px-4 py-2 rounded-md hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+                    className="flex-1 bg-blue-400 text-white px-4 py-2 rounded-md hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
                   >
                     Save Changes
                   </button>
@@ -177,11 +177,11 @@ const MyProfile = () => {
                 <>
                   <button
                     onClick={handleEdit}
-                    className="w-full bg-teal-600 text-white px-4 py-2 rounded-md hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
+                    className="w-full bg-blue-400 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
                   >
                     EDIT PROFILE
                   </button>
-                  <button className="w-full bg-teal-600 text-white px-4 py-2 rounded-md hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2">
+                  <button className="w-full bg-blue-400 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2">
                     CHANGE PASSWORD
                   </button>
                 </>
