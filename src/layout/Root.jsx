@@ -8,6 +8,7 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar"
+import Footer from "@/pages/Homepage/Footer";
 import { Outlet } from "react-router-dom";
 
 const Root = () => {
@@ -25,14 +26,15 @@ const Root = () => {
             <CustomNav />
           </header>
           <Nav />
-          <div className="flex flex-1 flex-col p-4 pt-0">
+          <div className="flex flex-1 flex-col">
             <div className="grid auto-rows-min grid-cols-1">
              <Outlet />
             </div>
           </div>
+          <Footer />
         </SidebarInset>
-        
       </SidebarProvider>
+     
       </>
     );
 };

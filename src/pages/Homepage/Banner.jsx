@@ -23,7 +23,7 @@ const Banner = () => {
     return (
         <>
         <Swiper
-          spaceBetween={10}
+          spaceBetween={0}
           centeredSlides={true}
           autoplay={{
             delay: 4000,
