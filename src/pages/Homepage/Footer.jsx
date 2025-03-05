@@ -1,4 +1,6 @@
 import { Facebook, Twitter, Linkedin, Instagram, ArrowUp } from "lucide-react"
+import logo from '../../../public/wa-259.jpg'
+import { Link } from "react-router-dom"
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -15,7 +17,7 @@ const Footer = () => {
           {/* Company Logo and Contact */}
           <div className="space-y-4">
             <div className="mb-4">
-              <img src="/placeholder.svg?height=60&width=160" alt="Whatever's Logo" className="h-10" />
+              <img src={logo} alt="Whatever's Logo" className="h-10" />
             </div>
             <p className="text-sm">Got Question? Call us 9 AM- 10 PM</p>
             <p className="text-lg font-bold">09613-800800</p>
@@ -47,19 +49,19 @@ const Footer = () => {
             <h3 className="font-bold text-lg uppercase">Company</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-sm hover:underline">
+                <Link to={"/about-us"} href="#" className="text-sm hover:underline">
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-sm hover:underline">
+                <Link to={"/career"} className="text-sm hover:underline">
                   Career
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-sm hover:underline">
+                <Link to={"/contact-us"} className="text-sm hover:underline">
                   Contact Us
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#" className="text-sm hover:underline">
@@ -68,7 +70,7 @@ const Footer = () => {
               </li>
               <li>
                 <a href="#" className="text-sm hover:underline">
-                  Othoba Certified
+                  Whatever's Certified
                 </a>
               </li>
               <li>
@@ -137,7 +139,7 @@ const Footer = () => {
               </li>
               <li>
                 <a href="#" className="text-sm hover:underline">
-                  How To Shop On Othoba
+                  How To Shop On Whatever
                 </a>
               </li>
               <li>
