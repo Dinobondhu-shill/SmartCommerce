@@ -10,6 +10,11 @@ import NextSameDayDelivery from "./pages/Privacy/NextOrSameDay";
 import WhateverCertified from "./pages/Privacy/Certification";
 import CancellationReturnRefund from "./pages/Privacy/Return-refund";
 import LoginPage from "./pages/Auth/Auth";
+import ForgotPassword from "./pages/Auth/ForgetPassword";
+import ErrorPage from "./pages/Error";
+import ProfileLayout from "./layout/ProfileLayout";
+import { SidebarProvider } from "./components/ui/sidebar";
+import MyProfile from "./pages/Profile/MyProfile";
 
 
 
@@ -19,6 +24,7 @@ export const router = createBrowserRouter([
   {
     path:'/',
     element: <Root />,
+    errorElement:<ErrorPage />,
     children:[
       {
         path:"/",
@@ -62,7 +68,24 @@ export const router = createBrowserRouter([
       {
         path:"/login",
         element:<LoginPage />
-      }
+      },
+      {
+        path:"/forget-password",
+        element:<ForgotPassword />
+      },
+     
+    ]
+  },
+  {
+    path: '/profile',
+    element:(
+      <SidebarProvider className="block"> {/* Separate provider for Profile Layout */}
+        <ProfileLayout />
+      </SidebarProvider>
+    ),
+    errorElement:<ErrorPage />,
+    children: [
+      { index: true, element: <MyProfile /> },
     ]
   }
 ])

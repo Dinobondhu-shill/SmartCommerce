@@ -5,15 +5,16 @@ import { Input } from './ui/input';
 import { Button } from './ui/button';
 import { ChevronRight, GitCompareArrows, Heart, LogIn, Search, ShoppingBag } from 'lucide-react';
 import MobileMenu from './MobileMenu';
+import { Link } from 'react-router-dom';
 
 const Nav = () => {
     return (
-       <div className='flex items-center bg-[#a96bdf5f] justify-between py-1.5' >
+       <div className='flex items-center w-full bg-[#a96bdf5f] justify-between py-1.5' >
         <div className='md:pl-3 md:pt-2 flex gap-3'>
             <div className='block text-xl md:hidden'>
             <SidebarTrigger className="-ml-0" />
             </div>
-           <img src={logo} alt="whatever logo" className=' h-8 md:h-8'/> 
+           <Link to={'/'}> <img src={logo} alt="whatever logo" className=' h-8 md:h-8'/> </Link>
         </div>
         <div className="hidden md:flex w-full max-w-sm items-center space-x-2 relative">
             <Input type="text" placeholder="Search anything..." className="outline-0 border-gray-400 " />

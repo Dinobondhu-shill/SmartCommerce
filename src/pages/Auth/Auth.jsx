@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa"
+import { Link } from "react-router-dom"
 
 function LoginPage() {
   const [activeTab, setActiveTab] = useState("login")
@@ -168,7 +169,7 @@ function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-8 py-4">
+    <div className="min-h-screen flex items-center justify-center px-8 py-6">
       <div className="w-full max-w-7xl bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
         {/* Left side - Colorful background with text */}
         <div className="w-full md:w-5/12 relative overflow-hidden">
@@ -288,9 +289,9 @@ function LoginPage() {
                         Remember me
                       </label>
                     </div>
-                    <a href="#" className="text-sm text-gray-600 hover:text-purple-500">
+                    <Link to={"/forget-password"} className="text-sm text-gray-600 hover:text-purple-500">
                       Forgot Password?
-                    </a>
+                    </Link>
                   </div>
 
                   <button

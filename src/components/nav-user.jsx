@@ -1,4 +1,4 @@
-"use client"
+
 
 import {
   BadgeCheck,
@@ -30,6 +30,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar"
+import { Link } from "react-router-dom"
 
 export function NavUser({
   user
@@ -75,20 +76,10 @@ export function NavUser({
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
               <DropdownMenuItem>
-                <Sparkles />
-                Upgrade to Pro
-              </DropdownMenuItem>
-            </DropdownMenuGroup>
-            <DropdownMenuSeparator />
-            <DropdownMenuGroup>
-              <DropdownMenuItem>
                 <BadgeCheck />
-                Account
+               <Link to={'/profile'}> Account</Link>
               </DropdownMenuItem>
-              <DropdownMenuItem>
-                <CreditCard />
-                Billing
-              </DropdownMenuItem>
+            
               <DropdownMenuItem>
                 <Bell />
                 Notifications
