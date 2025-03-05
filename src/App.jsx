@@ -8,6 +8,8 @@ import PrivacyPolicy from "./pages/Privacy/PrivacyPolicy";
 import TermsAndConditions from "./pages/Privacy/Terms";
 import NextSameDayDelivery from "./pages/Privacy/NextOrSameDay";
 import WhateverCertified from "./pages/Privacy/Certification";
+import CancellationReturnRefund from "./pages/Privacy/Return-refund";
+import LoginPage from "./pages/Auth/Auth";
 
 
 
@@ -42,13 +44,24 @@ export const router = createBrowserRouter([
         path:"/terms-conditions",
         element:<TermsAndConditions />
       },
+      
       {
         path:"/nextsamedaydelivery",
         element:<NextSameDayDelivery />
       },
+
       {
         path:"/certification",
         element:<WhateverCertified />
+      },
+      
+      {
+        path:"/refund-return",
+        element:<CancellationReturnRefund />
+      },
+      {
+        path:"/login",
+        element:<LoginPage />
       }
     ]
   }

@@ -91,9 +91,9 @@ const Footer = () => {
             <h3 className="font-bold text-lg uppercase">My Account</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-sm hover:underline">
+                <Link to={"/login"} className="text-sm hover:underline">
                   Sign In
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#" className="text-sm hover:underline">
@@ -148,9 +148,9 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm hover:underline">
+                <Link to={"/refund-return"} className="text-sm hover:underline">
                   Cancellation, Return & Refund
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
