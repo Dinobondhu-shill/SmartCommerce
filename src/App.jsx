@@ -4,6 +4,10 @@ import Home from "./pages/Homepage/Home";
 import ContactUs from "./pages/ContactPage/ContactUs";
 import AboutUs from "./pages/AboutUs/About-us";
 import Career from "./pages/Career/Career";
+import PrivacyPolicy from "./pages/Privacy/PrivacyPolicy";
+import TermsAndConditions from "./pages/Privacy/Terms";
+import NextSameDayDelivery from "./pages/Privacy/NextOrSameDay";
+import WhateverCertified from "./pages/Privacy/Certification";
 
 
 
@@ -29,6 +33,22 @@ export const router = createBrowserRouter([
       {
         path:"/career",
         element:<Career />
+      },
+      {
+        path:"/privacy-policy",
+        element:<PrivacyPolicy />
+      },
+      {
+        path:"/terms-conditions",
+        element:<TermsAndConditions />
+      },
+      {
+        path:"/nextsamedaydelivery",
+        element:<NextSameDayDelivery />
+      },
+      {
+        path:"/certification",
+        element:<WhateverCertified />
       }
     ]
   }
