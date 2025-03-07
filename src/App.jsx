@@ -9,7 +9,7 @@ import TermsAndConditions from "./pages/Privacy/Terms";
 import NextSameDayDelivery from "./pages/Privacy/NextOrSameDay";
 import WhateverCertified from "./pages/Privacy/Certification";
 import CancellationReturnRefund from "./pages/Privacy/Return-refund";
-import LoginPage from "./pages/Auth/Auth";
+// import LoginPage from "./pages/Auth/Auth";
 import ForgotPassword from "./pages/Auth/ForgetPassword";
 import ErrorPage from "./pages/Error";
 import ProfileLayout from "./layout/ProfileLayout";
@@ -19,6 +19,9 @@ import AddressBook from "./pages/Profile/AddressBook";
 import CustomerWallet from "./pages/Profile/Wallet";
 import MyReturn from "./pages/Profile/MyReturn";
 import MyCancellations from "./pages/Profile/MyCancelllation";
+import RegisterAccount from "./pages/Auth/Register";
+import LoginPage from "./pages/Auth/Login";
+import VendorRegister from "./pages/Auth/VendorRegister";
 
 
 
@@ -69,9 +72,22 @@ export const router = createBrowserRouter([
         path:"/refund-return",
         element:<CancellationReturnRefund />
       },
+      // {
+      //   path:"/log-in",
+      //   element:<LoginPage />
+      // },
       {
         path:"/login",
         element:<LoginPage />
+      },
+      {
+        path:"/vendor/register",
+        element:<VendorRegister />
+      },
+
+      {
+        path:"/register",
+        element: <RegisterAccount />
       },
       {
         path:"/forget-password",
