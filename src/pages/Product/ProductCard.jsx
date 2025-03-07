@@ -82,11 +82,11 @@ export default function ProductCard({
       </DropdownMenu>
 
       {/* Product Image */}
-      <div className="aspect-square overflow-hidden bg-gray-100">
+      <div className=" overflow-hidden bg-gray-100">
         <img
           src={product.image || "/placeholder.svg"}
           alt={product.name}
-          className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+          className="w-sm max-h-[250px] object-cover transform group-hover:scale-105 transition-transform duration-300"
         />
       </div>
 
@@ -110,14 +110,6 @@ export default function ProductCard({
             ))}
           </div>
 
-          <p className="text-sm text-gray-600">{product.warranty}</p>
-
-          <div className="flex items-center gap-2 text-sm text-gray-500">
-            <span className="inline-flex items-center gap-1">
-              <div className="w-2 h-2 rounded-full bg-green-500"></div>
-              {product.shipping}
-            </span>
-          </div>
         </div>
 
         <div className="flex flex-wrap gap-1">

@@ -2,6 +2,7 @@ import React from "react";
 import Banner from "./Banner";
 import Categories from "./Categories";
 import ProductCard from "../Product/ProductCard";
+import TodaysDeals from "../Product/TodaysDeal";
 
 const Home = () => {
   return (
@@ -33,6 +34,9 @@ const Home = () => {
         <ProductCard />
         <ProductCard />
       </div>
+    </div>
+    <div>
+      <TodaysDeals />
     </div>
     </div>
   );
