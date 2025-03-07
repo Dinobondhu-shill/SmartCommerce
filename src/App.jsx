@@ -22,6 +22,10 @@ import MyCancellations from "./pages/Profile/MyCancelllation";
 import RegisterAccount from "./pages/Auth/Register";
 import LoginPage from "./pages/Auth/Login";
 import VendorRegister from "./pages/Auth/VendorRegister";
+import GuestCheckout from "./pages/Checkout/GuestCheckout";
+import ProductPage from "./pages/Product/ProductDetails";
+import Checkout from "./pages/Checkout/CheckoutPage";
+import WishlistPage from "./pages/Wishlist/Wishlist";
 
 
 
@@ -93,6 +97,22 @@ export const router = createBrowserRouter([
         path:"/forget-password",
         element:<ForgotPassword />
       },
+      {
+        path:"/wishlist",
+        element:<WishlistPage />
+      },
+      {
+        path:"/checkout",
+        element:<Checkout />
+      },
+      {
+        path:"/guest-checkout",
+        element:<GuestCheckout />
+      },
+      {
+        path:'/product-details',
+        element:<ProductPage />
+      }
      
     ]
   },

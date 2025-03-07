@@ -53,9 +53,9 @@ export default function RegisterAccount() {
 
 
   return (
-    <div className="container mx-auto px-4 py-6">
+    <div className="container mx-auto px-4 md:px-10 py-6">
       {/* Social sharing buttons - visible only on larger screens */}
-      <div className="fixed left-0 top-1/4 hidden md:flex flex-col gap-2">
+      <div className="fixed right-0 top-1/4 hidden md:flex flex-col gap-2">
         <Button variant="outline" size="icon" className="bg-blue-600 text-white hover:bg-blue-700 rounded-none">
           <span className="sr-only">Facebook</span>
           <svg

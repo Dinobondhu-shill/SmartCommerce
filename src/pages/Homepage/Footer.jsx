@@ -106,9 +106,9 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm hover:underline">
+                <Link to={'/wishlist'} className="text-sm hover:underline">
                   My Wishlist
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#" className="text-sm hover:underline">

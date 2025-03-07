@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 const Nav = () => {
     return (
-       <div className='flex items-center w-full bg-[#a96bdf5f] justify-between py-1.5' >
+       <div className='flex   items-center w-full bg-[#a96bdf5f] justify-between py-1.5' >
         <div className='md:pl-3 md:pt-2 flex gap-3'>
             <div className='block text-xl md:hidden'>
             <SidebarTrigger className="-ml-0" />
@@ -23,7 +23,7 @@ const Nav = () => {
                 </Button>
         </div>
         <div className='hidden md:flex items-center gap-3 pr-3 text-[#5782dff6]'>
-            <Heart />
+         <Link to={'wishlist'}>   <Heart /></Link>
             <GitCompareArrows />
             <ShoppingBag />
         </div>

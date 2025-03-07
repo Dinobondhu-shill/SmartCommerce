@@ -98,6 +98,7 @@ export default function VendorRegister() {
 
   return (
     <div className="min-h-screen flex flex-wrap items-center bg-gradient-to-b from-blue-50 to-indigo-50 px-4 py-8">
+      
       <div className="container mx-auto max-w-3xl">
         <Breadcrumb className="mb-6">
           <BreadcrumbList>
@@ -536,7 +537,7 @@ export default function VendorRegister() {
                       <div className="grid gap-1.5 leading-none">
                         <Label htmlFor="agreeTerms" className="text-sm">
                           I agree to the{" "}
-                          <Link to="/terms" className="text-blue-600 hover:underline">
+                          <Link to="/terms-conditions" className="text-blue-600 hover:underline">
                             Terms and Conditions
                           </Link>{" "}
                           <span className="text-red-500">*</span>
@@ -555,7 +556,7 @@ export default function VendorRegister() {
                       <div className="grid gap-1.5 leading-none">
                         <Label htmlFor="agreePrivacy" className="text-sm">
                           I agree to the{" "}
-                          <Link to="/privacy" className="text-blue-600 hover:underline">
+                          <Link to="/privacy-policy" className="text-blue-600 hover:underline">
                             Privacy Policy
                           </Link>{" "}
                           <span className="text-red-500">*</span>
