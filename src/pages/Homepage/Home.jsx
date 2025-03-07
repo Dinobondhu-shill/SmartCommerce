@@ -1,6 +1,7 @@
 import React from "react";
 import Banner from "./Banner";
 import Categories from "./Categories";
+import ProductCard from "../Product/ProductCard";
 
 const Home = () => {
   return (
@@ -22,6 +23,17 @@ const Home = () => {
       <div>
       <Categories />
       </div>
+      <div className="container mx-auto px-4 py-8">
+      <h2 className="text-3xl font-extrabold tracking-widest text-gray-800 mb-6">
+        Our Collections
+      </h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+      </div>
+    </div>
     </div>
   );
 };
