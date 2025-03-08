@@ -157,7 +157,7 @@ export default function TodaysDeals() {
   const currentProduct = products[currentIndex]
 
   return (
-    <div className="bg-gradient-to-br  from-purple-100 to-white py-8 relative">
+    <div className="bg-gradient-to-br overflow-hidden from-purple-100 to-white py-8 relative">
       <div className="container px-4">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-3xl font-bold text-gray-900">Today's Deals</h2>
@@ -181,7 +181,7 @@ export default function TodaysDeals() {
           </div>
         </div>
 
-        <div className="w-full h-[620px] md:h-[600px] border border-gray-400 overflow-hidden rounded-2xl bg-white shadow-lg">
+        <div className="w-full h-[640px] md:h-[600px] border border-gray-400 overflow-hidden rounded-2xl bg-white shadow-lg">
           <AnimatePresence initial={false} custom={direction}>
             <motion.div
               key={currentIndex}
@@ -255,7 +255,7 @@ export default function TodaysDeals() {
         </div>
 
         {/* Product Thumbnails */}
-        <div className=" z-20 grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-10 gap-4">
+        <div className="md:absolute bottom-12 left-8 z-20 mt-5 md:mt-0 grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-10 gap-4">
           {products.map((product, index) => (
             <button
               key={product.id}

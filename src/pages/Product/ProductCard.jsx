@@ -31,135 +31,96 @@ export default function ProductCard({
   const discountPercentage = Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
 
   const handleLike = () => {
-    if (isLiked) {
-      setLikeCount((prev) => prev - 1)
-    } else {
-      setLikeCount((prev) => prev + 1)
-    }
+    setLikeCount(isLiked ? likeCount - 1 : likeCount + 1)
     setIsLiked(!isLiked)
   }
 
   const handleAddToCart = () => {
     setIsAddedToCart(true)
-    // Add to cart logic here
     setTimeout(() => setIsAddedToCart(false), 2000)
   }
 
-  const handleBuyNow = () => {
-    // Buy now logic here
-    console.log("Buy now clicked")
-  }
-
-  const handleShare = () => {
-    // Share logic here
-    console.log("Share clicked")
-  }
-
   return (
-    <Link to="/product-details" className="group relative bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden max-w-sm">
-      {/* Discount Badge */}
+    <Link to="/product-details" className="group relative bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-200 overflow-hidden w-full sm:max-w-sm">
       {discountPercentage > 0 && (
-        <Badge className="absolute top-4 left-4 z-10 bg-red-500 text-white">-{discountPercentage}% OFF</Badge>
+        <Badge className="absolute top-3 left-3 bg-red-500 text-white text-xs md:text-sm px-2 py-1 rounded-md">
+          -{discountPercentage}% OFF
+        </Badge>
       )}
 
-      {/* More Options Menu */}
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button
             variant="ghost"
             size="icon"
-            className="absolute top-2 right-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity"
+            className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity"
           >
-            <ChevronDown className="h-4 w-4" />
+            <ChevronDown className="h-5 w-5" />
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
-          <DropdownMenuItem onClick={handleShare}>
+          <DropdownMenuItem>
             <Share2 className="mr-2 h-4 w-4" /> Share
           </DropdownMenuItem>
           <DropdownMenuItem>Report Item</DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
 
-      {/* Product Image */}
-      <div className=" overflow-hidden bg-gray-100">
-        <img
-          src={product.image || "/placeholder.svg"}
-          alt={product.name}
-          className="w-sm max-h-[250px] object-cover transform group-hover:scale-105 transition-transform duration-300"
-        />
+      <div className="bg-gray-100 flex justify-center items-center">
+        <img src={product.image || "/placeholder.svg"} alt={product.name} className="w-full h-48 sm:h-56 object-cover" />
       </div>
 
-      {/* Product Info */}
-      <div className="p-4 space-y-4">
-        <div className="space-y-2">
-          <h3 className="font-medium text-gray-900 group-hover:text-purple-600 transition-colors">{product.name}</h3>
+      <div className="p-4 space-y-3">
+        <h3 className="text-sm sm:text-base font-medium text-gray-900 group-hover:text-purple-600 transition-colors">
+          {product.name}
+        </h3>
 
-          <div className="flex items-baseline gap-2">
-            <span className="text-2xl font-bold text-purple-600">RM {product.price.toFixed(2)}</span>
-            {product.originalPrice > product.price && (
-              <span className="text-sm text-gray-500 line-through">RM {product.originalPrice.toFixed(2)}</span>
-            )}
-          </div>
-
-          <div className="flex flex-wrap gap-1">
-            {product.specs.map((spec, index) => (
-              <Badge key={index} variant="secondary" className="bg-purple-50 text-purple-700 hover:bg-purple-100">
-                {spec}
-              </Badge>
-            ))}
-          </div>
-
+        <div className="flex items-center gap-2">
+          <span className="text-lg sm:text-xl font-bold text-purple-600">RM {product.price.toFixed(2)}</span>
+          {product.originalPrice > product.price && (
+            <span className="text-xs sm:text-sm text-gray-500 line-through">RM {product.originalPrice.toFixed(2)}</span>
+          )}
         </div>
 
         <div className="flex flex-wrap gap-1">
-          {product.tags.map((tag, index) => (
-            <Badge key={index} variant="outline" className="text-gray-600 hover:bg-gray-50">
-              #{tag}
+          {product.specs.map((spec, index) => (
+            <Badge key={index} className="text-xs sm:text-sm bg-purple-50 text-purple-700 px-2 py-1">
+              {spec}
             </Badge>
           ))}
         </div>
 
-        {/* Action Buttons */}
-        <div className="pt-4 grid grid-cols-2 gap-2">
+        <div className="pt-3 grid grid-cols-2 gap-2">
           <Button
             variant="outline"
             className={cn(
-              "border-2",
-              isAddedToCart
-                ? "border-green-500 text-green-600 bg-green-50"
-                : "border-purple-200 text-purple-600 hover:bg-purple-50",
+              "text-xs sm:text-sm border-2",
+              isAddedToCart ? "border-green-500 text-green-600 bg-green-50" : "border-purple-200 text-purple-600 hover:bg-purple-50"
             )}
             onClick={handleAddToCart}
           >
-            <ShoppingCart className={cn("mr-2 h-4 w-4", isAddedToCart ? "text-green-600" : "text-purple-600")} />
+            <ShoppingCart className="mr-2 h-4 w-4" />
             {isAddedToCart ? "Added!" : "Add to Cart"}
           </Button>
-          <Button className="bg-purple-600 hover:bg-purple-700 text-white" onClick={handleBuyNow}>
+          <Button className="text-xs sm:text-sm bg-purple-600 hover:bg-purple-700 text-white" onClick={() => console.log("Buy now clicked")}>
             Buy Now
           </Button>
         </div>
 
-        {/* Like Button */}
         <div className="flex items-center justify-between pt-2">
           <button
             onClick={handleLike}
-            className="flex items-center gap-2 text-gray-500 hover:text-purple-600 transition-colors"
+            className="flex items-center gap-1 text-gray-500 hover:text-purple-600 transition-colors text-xs sm:text-sm"
           >
-            <Heart className={cn("h-5 w-5 transition-all", isLiked && "fill-purple-600 text-purple-600 scale-110")} />
-            <span className="text-sm font-medium">
-              {likeCount} {likeCount === 1 ? "like" : "likes"}
-            </span>
+            <Heart className={cn("h-4 w-4 transition-all", isLiked && "fill-purple-600 text-purple-600 scale-110")} />
+            <span>{likeCount} {likeCount === 1 ? "like" : "likes"}</span>
           </button>
 
           {!product.inStock && (
-            <Badge variant="outline" className="text-red-600 border-red-200">
-              Out of Stock
-            </Badge>
+            <Badge className="text-xs sm:text-sm text-red-600 border-red-200 px-2 py-1">Out of Stock</Badge>
           )}
         </div>
       </div>
     </Link>
   )
 }
-

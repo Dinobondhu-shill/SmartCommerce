@@ -3,6 +3,7 @@ import Banner from "./Banner";
 import Categories from "./Categories";
 import ProductCard from "../Product/ProductCard";
 import TodaysDeals from "../Product/TodaysDeal";
+import FeaturedProducts from "./FeatureProduct";
 
 const Home = () => {
   return (
@@ -37,6 +38,9 @@ const Home = () => {
     </div>
     <div>
       <TodaysDeals />
+    </div>
+    <div>
+      <FeaturedProducts />
     </div>
     </div>
   );
