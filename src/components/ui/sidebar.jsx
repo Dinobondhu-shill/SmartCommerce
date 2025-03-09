@@ -160,7 +160,7 @@ function Sidebar({
           data-sidebar="sidebar"
           data-slot="sidebar"
           data-mobile="true"
-          className="bg-[#a370d0b8] text-sidebar-foreground w-(--sidebar-width) p-0 [&>button]:hidden"
+          className="bg-gradient-to-br from-pink-300 to-purple-500 bg-opacity-20 backdrop-blur-xl shadow-2xl  rounded-r-3xl text-sidebar-foreground w-(--sidebar-width) p-0 [&>button]:hidden"
           style={
             {
               "--sidebar-width": SIDEBAR_WIDTH_MOBILE
@@ -204,13 +204,13 @@ function Sidebar({
           // Adjust the padding for floating and inset variants.
           variant === "floating" || variant === "inset"
             ? "p-2 group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4))+2px)]"
-            : "group-data-[collapsible=icon]:w-(--sidebar-width-icon) group-data-[side=left]:border-r group-data-[side=right]:border-l",
+            : "group-data-[collapsible=icon]:w-(--sidebar-width-icon) ",
           className
         )}
         {...props}>
         <div
           data-sidebar="sidebar"
-          className="bg-[#a96bdf5f] group-data-[variant=floating]:border-none flex h-full w-full flex-col group-data-[variant=floating]:rounded-lg group-data-[variant=floating] group-data-[variant=floating]:">
+          className="w-full  bg-gradient-to-br from-pink-300 to-purple-500 bg-opacity-20 backdrop-blur-xl shadow-2xl  rounded-r-3xl  group-data-[variant=floating]:border-none flex h-full  flex-col group-data-[variant=floating]:rounded-lg group-data-[variant=floating] group-data-[variant=floating]:">
           {children}
         </div>
       </div>
@@ -325,18 +325,18 @@ function SidebarFooter({
   );
 }
 
-function SidebarSeparator({
-  className,
-  ...props
-}) {
-  return (
-    <Separator
-      data-slot="sidebar-separator"
-      data-sidebar="separator"
-      className={cn("bg-sidebar-border mx-2 w-auto", className)}
-      {...props} />
-  );
-}
+// function SidebarSeparator({
+//   className,
+//   ...props
+// }) {
+//   return (
+//     <Separator
+//       data-slot="sidebar-separator"
+//       data-sidebar="separator"
+//       className={cn("bg-sidebar-border mx-2 w-auto", className)}
+//       {...props} />
+//   );
+// }
 
 function SidebarContent({
   className,
@@ -673,7 +673,7 @@ export {
   SidebarMenuSubItem,
   SidebarProvider,
   SidebarRail,
-  SidebarSeparator,
+  // SidebarSeparator,
   SidebarTrigger,
   useSidebar,
 }

@@ -102,7 +102,7 @@ export default function ProductCard({
             <ShoppingCart className="mr-2 h-4 w-4" />
             {isAddedToCart ? "Added!" : "Add to Cart"}
           </Button>
-          <Button className="text-xs sm:text-sm bg-purple-600 hover:bg-purple-700 text-white" onClick={() => console.log("Buy now clicked")}>
+          <Button className="text-xs sm:text-sm bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 text-white shadow-lg hover:scale-105 hover:text-black transition-transform duration-300 " onClick={() => console.log("Buy now clicked")}>
             Buy Now
           </Button>
         </div>

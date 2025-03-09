@@ -34,8 +34,8 @@ export default function CarouselPlugin({ items = [], time = 3000 }) {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious className={'bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white shadow-lg hover:scale-105 transition-transform duration-300'} />
+      <CarouselNext className={'bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white shadow-lg hover:scale-105 transition-transform duration-300'} />
     </Carousel>
   )
 }
