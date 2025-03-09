@@ -67,16 +67,16 @@ export default function ProductCard({
       </DropdownMenu>
 
       <div className="bg-gray-100 flex justify-center items-center">
-        <img src={product.image || "/placeholder.svg"} alt={product.name} className="w-full h-48 sm:h-56 object-cover" />
+        <img src={product.image || "/placeholder.svg"} alt={product.name} className="w-full h-36 sm:h-48 object-cover" />
       </div>
 
-      <div className="p-4 space-y-3">
+      <div className="p-2 md:p-4 space-y-1 md:space-y-3">
         <h3 className="text-sm sm:text-base font-medium text-gray-900 group-hover:text-purple-600 transition-colors">
           {product.name}
         </h3>
 
-        <div className="flex items-center gap-2">
-          <span className="text-lg sm:text-xl font-bold text-purple-600">RM {product.price.toFixed(2)}</span>
+        <div className="flex  items-center gap-2">
+          <span className="text-md sm:text-xl font-bold text-purple-600">RM {product.price.toFixed(2)}</span>
           {product.originalPrice > product.price && (
             <span className="text-xs sm:text-sm text-gray-500 line-through">RM {product.originalPrice.toFixed(2)}</span>
           )}
@@ -90,7 +90,7 @@ export default function ProductCard({
           ))}
         </div>
 
-        <div className="pt-3 grid grid-cols-2 gap-2">
+        <div className="p-2 md:pt-3 grid grid-cols-1 md:grid-cols-2 gap-2">
           <Button
             variant="outline"
             className={cn(
@@ -107,7 +107,7 @@ export default function ProductCard({
           </Button>
         </div>
 
-        <div className="flex items-center justify-between pt-2">
+        <div className="flex items-center justify-between p-2">
           <button
             onClick={handleLike}
             className="flex items-center gap-1 text-gray-500 hover:text-purple-600 transition-colors text-xs sm:text-sm"

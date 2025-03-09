@@ -158,9 +158,9 @@ export default function TodaysDeals() {
 
   return (
     <div className="bg-gradient-to-br overflow-hidden from-purple-100 to-white py-8 relative">
-      <div className="container px-4">
-        <div className="flex items-center justify-between mb-8">
-          <h2 className="text-3xl font-bold text-gray-900">Today's Deals</h2>
+      <div className="container px-2 md:px-4">
+        <div className="flex items-center justify-between mb-4 md:mb-8">
+          <h2 className="text-xl md:text-3xl font-bold text-gray-900">Today's Deals</h2>
           <div className="flex gap-2">
             <Button
               variant="outline"
@@ -181,7 +181,7 @@ export default function TodaysDeals() {
           </div>
         </div>
 
-        <div className="w-full h-[640px] md:h-[600px] border border-gray-400 overflow-hidden rounded-2xl bg-white shadow-lg">
+        <div className="w-full h-[700px] md:h-[600px] border border-gray-400 overflow-hidden rounded-2xl bg-white shadow-lg">
           <AnimatePresence initial={false} custom={direction}>
             <motion.div
               key={currentIndex}
@@ -219,8 +219,8 @@ export default function TodaysDeals() {
                     className="w-[280px] md:w-full h-full object-contain rounded-2xl"
                   />
                 </div>
-                <div className="py-4 px-3 flex flex-col max-w-10/12 ">
-                  <div className="space-y-3">
+                <div className="py-2 md:py-4 px-3 flex flex-col max-w-10/12 ">
+                  <div className="space-y-2 md:space-y-3">
                     <h3 className="text-xl md:text-2xl font-bold text-gray-900">{currentProduct.name}</h3>
                     <StarRating rating={currentProduct.rating} />
                     <p className="text-gray-600 max-w-md">{currentProduct.description}</p>
@@ -255,7 +255,7 @@ export default function TodaysDeals() {
         </div>
 
         {/* Product Thumbnails */}
-        <div className="md:absolute bottom-12 left-8 z-20 mt-5 md:mt-0 grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-10 gap-4">
+        <div className="absolute bottom-10 left-6 z-50 mt-5 md:mt-0 grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-10 gap-4">
           {products.map((product, index) => (
             <button
               key={product.id}

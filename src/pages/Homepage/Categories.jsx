@@ -51,21 +51,21 @@ const category = [
 
 const Categories = () => {
   return (
-    <div className="py-5 px-4">
+    <div className=" py-3 md:py-5 px-4">
       {/* Title */}
-      <h2 className="text-3xl font-extrabold tracking-widest text-gray-800 mb-6">
+      <h2 className="text-2xl md:text-3xl font-extrabold tracking-widest text-gray-800 mb-6">
         Our Collections
       </h2>
 
       {/* Grid Layout for Categories */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-9 gap-4">
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-9 gap-2">
         {category.map((item, i) => (
           <Link
             to={item.path}
             className="flex flex-col items-center gap-2"
             key={i}
           >
-            <div className="border-2 border-blue-200 rounded-full p-1 w-20 h-20 flex items-center justify-center">
+            <div className="border-2 border-purple-300 rounded-full p-1 w-[72px] h-[72px] md:w-20 md:h-20 flex items-center justify-center">
               <img
                 src={item.icon}
                 alt={item.name}

@@ -34,11 +34,11 @@ const banner2= [
   return (
     <div>
         {/* Banner area  */}
-      <div className="flex max-h-[320px] w-full overflow-hidden items-center ">
-        <div className="w-[70%] flex-shrink-0 h-full">
+      <div className="flex max-h-[150px] md:max-h-[320px] w-full overflow-hidden items-center ">
+        <div className="w-full md:w-[70%] flex-shrink-0 h-full">
         <Banner items={banners} />
         </div>
-        <div className="w-[30%]">
+        <div className="hidden md:block md:w-[30%]">
         <Banner items={banner2} time={4500} />
         </div>
       </div>
@@ -47,8 +47,8 @@ const banner2= [
       <Categories />
       </div>
       <div className="container mx-auto px-4 py-8">
-      <h2 className="text-3xl font-extrabold tracking-widest text-gray-800 mb-6">
-        Our Collections
+      <h2 className="text-2xl md:text-3xl font-extrabold tracking-widest text-gray-800 mb-6">
+        Top Products
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         <ProductCard />

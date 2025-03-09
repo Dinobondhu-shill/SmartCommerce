@@ -23,14 +23,14 @@ export function NavProjects({
   const { isMobile } = useSidebar()
 
   return (
-    <SidebarGroup className="group-data-[collapsible=icon]:hidden">
-      <SidebarGroupLabel>Pages</SidebarGroupLabel>
+    <SidebarGroup className="group-data-[collapsible=icon]:visible">
+      <SidebarGroupLabel className="text-white md:text-black">Pages</SidebarGroupLabel>
       <SidebarMenu>
         {projects.map((item) => (
           <SidebarMenuItem key={item.name}>
             <SidebarMenuButton asChild>
               <a href={item.url}>
-                <item.icon />
+              {item.icon && <item.icon className="w-4 "/>}
                 <span>{item.name}</span>
               </a>
             </SidebarMenuButton>

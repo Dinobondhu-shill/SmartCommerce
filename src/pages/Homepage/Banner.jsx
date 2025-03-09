@@ -34,8 +34,8 @@ export default function CarouselPlugin({ items = [], time = 3000 }) {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className={'bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white shadow-lg hover:scale-105 transition-transform duration-300'} />
-      <CarouselNext className={'bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white shadow-lg hover:scale-105 transition-transform duration-300'} />
+      <CarouselPrevious className={'bg-gradient-to-x from-purple-600 via-pink-500 to-purple-600 hover:from-purple-700 hover:via-pink-600 hover:to-purple-700 bg-opacity-90 backdrop-blur-md shadow-2xl hover:shadow-[0px_0px_20px_rgba(219,39,119,0.6)] transition-all duration-300 ease-in-out hover:scale-105 rounded-full px-5 py-2 text-purple-600 font-semibold'} />
+      <CarouselNext className={'bg-gradient-to-x from-purple-600 via-pink-500 to-purple-600 hover:from-purple-700 hover:via-pink-600 hover:to-purple-700 bg-opacity-90 backdrop-blur-md shadow-2xl hover:shadow-[0px_0px_20px_rgba(219,39,119,0.6)] transition-all duration-300 ease-in-out hover:scale-105 rounded-full px-5 py-2 text-purple-600 font-semibold'} />
     </Carousel>
   )
 }

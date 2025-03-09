@@ -195,7 +195,7 @@ const Footer = () => {
       </div>
 
       {/* Scroll to top button */}
-      <div className="flex justify-end mt-8 mr-4">
+      <div className="flex justify-end mb-10 md:mb-5 mt-8 mr-4">
         <button
           onClick={scrollToTop}
           className="bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 transition-colors"
