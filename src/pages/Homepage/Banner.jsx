@@ -1,55 +1,41 @@
-import React, { useRef} from 'react';
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
+import * as React from "react"
+import Autoplay from "embla-carousel-autoplay"
 
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import './banner.css'
+import { Card, CardContent } from "@/components/ui/card"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 
-import image from '../../../public/holiday.jpg'
+export default function CarouselPlugin({ items = [], time = 3000 }) {
+  const plugin = React.useRef(
+    Autoplay({ delay: time, stopOnInteraction: true })
+  )
 
-// import required modules
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-
-const Banner = () => {
-    const progressCircle = useRef(null);
-    const progressContent = useRef(null);
-    const onAutoplayTimeLeft = (s, time, progress) => {
-      progressCircle.current.style.setProperty('--progress', 1 - progress);
-      progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
-    };
-    return (
-        <>
-        <Swiper
-          spaceBetween={0}
-          centeredSlides={true}
-          autoplay={{
-            delay: 4000,
-            disableOnInteraction: false,
-          }}
-          pagination={{
-            clickable: true,
-          }}
-          navigation={false}
-          modules={[Autoplay, Pagination, Navigation]}
-          onAutoplayTimeLeft={onAutoplayTimeLeft}
-          className="mySwiper"
-        >
-          <SwiperSlide><img src={image} alt="" className='w-full h-full' /></SwiperSlide>
-          <SwiperSlide><img src={image} alt="" className='w-full h-full' /></SwiperSlide>
-          <SwiperSlide><img src={image} alt="" className='w-full h-full' /></SwiperSlide>
-          <SwiperSlide><img src={image} alt="" className='w-full h-full' /></SwiperSlide>
-          <div className="autoplay-progress" slot="container-end">
-            <svg viewBox="0 0 48 48" ref={progressCircle}>
-              <circle cx="24" cy="24" r="20"></circle>
-            </svg>
-            <span ref={progressContent}></span>
-          </div>
-        </Swiper>
-      </>
-    );
-};
-
-export default Banner;
+  return (
+    <Carousel
+      plugins={[plugin.current]}
+      className="w-full"
+      opts={{ loop: true }} 
+    >
+      <CarouselContent>
+        {items.map((banner, index) => (
+          <CarouselItem key={index} className="border-0 p-0">
+            <div className="border-0">
+              <Card className="border-0 rounded-none p-0">
+                <CardContent className="flex aspect-square  items-center justify-center p-0">
+                  <img src={banner.image} alt="Banner" className="" />
+                </CardContent>
+              </Card>
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
+    </Carousel>
+  )
+}

@@ -6,19 +6,40 @@ import TodaysDeals from "../Product/TodaysDeal";
 import FeaturedProducts from "./FeatureProduct";
 
 const Home = () => {
+  const banners = [
+    {
+      image:"https://i.ibb.co.com/HfyQBcsh/White-Minimalist-Banner-Etsy-Shop.png",
+      path:"/"
+    },
+    {
+      image:"https://i.ibb.co.com/XZKkpw5X/Banner-black-friday-webshop-ecommerce-promotion.png",
+      path:"/"
+    },
+    {
+      image:"https://i.ibb.co.com/0pXCdtTW/Blue-Ecommerce-Online-Shopping-Linked-In-Banner.png",
+      path:"/"
+    },
+  
+  ]
+const banner2= [
+  {
+    image:"https://i.ibb.co.com/spMj8G6j/Gadget-Store-Sale-E-commerce-Storefront-Banner-in-Black-and-White-Modern-Minimalist-Style.png",
+    path:"/"
+  },
+  {
+    image:"https://i.ibb.co.com/0pXCdtTW/Blue-Ecommerce-Online-Shopping-Linked-In-Banner.png",
+    path:"/"
+  }
+]
   return (
     <div>
         {/* Banner area  */}
-      <div className="flex max-h-[320px] w-full overflow-hidden items-center gap-1.5">
+      <div className="flex max-h-[320px] w-full overflow-hidden items-center ">
         <div className="w-[70%] flex-shrink-0 h-full">
-          <Banner />
+        <Banner items={banners} />
         </div>
-        <div className="w-[30%] h-full overflow-hidden flex-shrink-0">
-          <img
-            src="https://i.ibb.co.com/ZTv6y15/bb707bf71aeb80caed4db25f6e51e379.webp"
-            alt="Banner"
-            className="w-full h-full object-cover"
-          />
+        <div className="w-[30%]">
+        <Banner items={banner2} time={4500} />
         </div>
       </div>
       {/* category section */}

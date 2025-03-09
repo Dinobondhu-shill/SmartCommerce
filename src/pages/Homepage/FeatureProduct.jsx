@@ -95,7 +95,7 @@ export default function FeaturedProducts() {
               className="object-cover rounded-md"
             />
             <div className="absolute bottom-0 left-0 right-0 p-6  text-white">
-              <h3 className="text-2xl font-bold mb-2 text-purple-600">DESTINATION DRESSES</h3>
+              <h3 className="md:text-2xl font-extrabold tracking-widest  mb-2 text-purple-600">DESTINATION DRESSES</h3>
               <Link href="#" className="text-blue-700 hover:text-blue-800 inline-flex items-center">
                 See More
                 <ChevronRight className="h-4 w-4 ml-1" />
@@ -154,25 +154,27 @@ export default function FeaturedProducts() {
           </div>
 
           <div className="grid gap-4 grid-cols-2 md:grid-cols-4 lg:grid-cols-6 border border-gray-300 p-3">
-          <div className="relative rounded-b-full col-span-1 md:col-span-2 lg:col-span-3 bg-gradient-to-t from-purple-300 to-transparent text-center">
+          <div className="flex justify-between flex-col rounded-t-full col-span-1 md:col-span-2 lg:col-span-3 bg-gradient-to-b from-pink-200 to-transparent text-center">
+
+          <div className="relative top-14 text-white">
+              <h3 className="md:text-2xl font-extrabold tracking-widest mb-2 text-purple-600">SALE & SERVICE OF APPLE</h3>
+              <Link href="#" className="text-blue-700 hover:text-blue-800 inline-flex items-center">
+                See More
+                <ChevronRight className="h-4 w-4 ml-1" />
+              </Link>
+            </div>
             <img
               src="https://i.ibb.co.com/dGb1pww/smar-watch.jpg?height=400&width=600"
               alt="Sale & Service of Apple"
               fill
               className="object-cover rounded-md"
             />
-            <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-              <h3 className="text-2xl font-bold text-purple-600 mb-2">SALE & SERVICE OF APPLE</h3>
-              <Link href="#" className="text-blue-700 hover:text-blue-800inline-flex items-center">
-                See More
-                <ChevronRight className="h-4 w-4 ml-1" />
-              </Link>
-            </div>
+           
           </div>
 
           <div className="space-y-2 col-span-1 md:col-span-2 lg:col-span-3">
             {featuredProducts.map((product) => (
-              <Card key={product.id} className="flex items-center p-4 gap-4">
+              <Card key={product.id} className="flex items-center p-4 gap-2">
                 <img
                   src={product.image || "/placeholder.svg"}
                   alt={product.name}
