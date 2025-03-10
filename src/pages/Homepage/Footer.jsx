@@ -11,7 +11,7 @@ const Footer = () => {
   }
 
   return (
-    <footer className="w-full bg-white border-t border-gray-100 pt-10 pb-6 px-5">
+    <footer className="w-full bg-gradient-to-t from-slate-50 to-slate-100 pt-10 pb-6 px-5">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 justify-between">
           {/* Company Logo and Contact */}

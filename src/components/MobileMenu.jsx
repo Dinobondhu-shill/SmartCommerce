@@ -8,7 +8,7 @@ const MobileMenu = () => {
         { to: "/messages", icon: <MessageCircle size={18} />, label: "Message" },
         { to: "/shops", icon: <Store size={18} />, label: "Shops" },
         { to: "/", icon: <House size={22} />, label: "Home", special: true },
-        { to: "/checkout", icon: <ShoppingCart size={18} />, label: "My Cart" },
+        { to: "/cart", icon: <ShoppingCart size={18} />, label: "My Cart" },
         { to: "/profile", icon: <CircleUser size={18} />, label: "Account" }
       ].map((item, index) => (
         <NavLink 

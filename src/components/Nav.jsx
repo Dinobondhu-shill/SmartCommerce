@@ -9,7 +9,7 @@ import { NavLink, Link } from 'react-router-dom';
 
 const Nav = () => {
     return (
-       <div className='flex border-b-2 md:border-y-2 border-purple-200 rounded-tl-3xl rounded-bl-3xl md:rounded-br-3xl  items-center w-full bg-white justify-between py-1.5' >
+       <div className='flex  border-purple-200 md:rounded-bl-3xl md:rounded-br-3xl  items-center w-full  justify-between py-1.5' >
         <div className='md:pl-3 md:pt-2 flex gap-3'>
             <div className='block text-xl'>
             <SidebarTrigger className="-ml-0" />

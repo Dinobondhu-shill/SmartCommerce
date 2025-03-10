@@ -2,8 +2,7 @@
 
 import { ShoppingCart, Trash2, ArrowRight, Minus, Plus, ShoppingBag } from "lucide-react"
 import { useState } from "react"
-import Link from "next/link"
-import Image from "next/image"
+import { Link } from "react-router-dom"
 
 export default function CartPage() {
   // Sample cart data (grouped by vendors)
@@ -11,13 +10,13 @@ export default function CartPage() {
     {
       vendor: "Tech World",
       items: [
-        { id: 1, name: "Wireless Headphones", price: 50, qty: 1, image: "/placeholder.svg?height=200&width=200" },
-        { id: 2, name: "Smart Watch", price: 70, qty: 2, image: "/placeholder.svg?height=200&width=200" },
+        { id: 1, name: "Wireless Headphones", price: 50, qty: 1, image: "https://i.ibb.co.com/h2BqX5r/camera.jpg" },
+        { id: 2, name: "Smart Watch", price: 70, qty: 2, image: "https://i.ibb.co.com/h2BqX5r/camera.jpg" },
       ],
     },
     {
       vendor: "Fashion Hub",
-      items: [{ id: 3, name: "Leather Wallet", price: 30, qty: 1, image: "/placeholder.svg?height=200&width=200" }],
+      items: [{ id: 3, name: "Leather Wallet", price: 30, qty: 1, image: "https://i.ibb.co.com/h2BqX5r/camera.jpg" }],
     },
   ])
 
@@ -60,8 +59,8 @@ export default function CartPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100 pb-24">
       {/* Header */}
-      <div className="bg-white shadow-sm sticky top-0 z-10">
-        <div className="max-w-3xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div className="sticky  top-0 z-10">
+        <div className="max-w-3xl mx-auto rounded-3xl  bg-gradient-to-b from-slate-50 to-slate-100 px-4 py-4 flex items-center justify-between">
           <h1 className="text-xl font-bold text-slate-800 flex items-center">
             <ShoppingBag className="mr-2 h-5 w-5 text-primary" />
             Your Cart
@@ -96,7 +95,7 @@ export default function CartPage() {
                   key={vendor.vendor}
                   className="bg-white rounded-xl overflow-hidden shadow-sm border border-slate-100 transition-all duration-300 hover:shadow-md"
                 >
-                  <div className="bg-gradient-to-r from-primary/10 to-transparent px-6 py-3 border-b border-slate-100">
+                  <div className="bg-gradient-to-r from-[#e1c3fd] to-transparent px-6 py-3 border-b border-slate-100">
                     <h3 className="font-semibold text-slate-800">{vendor.vendor}</h3>
                   </div>
 
@@ -104,7 +103,7 @@ export default function CartPage() {
                     {vendor.items.map((item, itemIndex) => (
                       <div key={item.id} className="p-4 sm:p-6 flex flex-col sm:flex-row sm:items-center gap-4">
                         <div className="relative h-24 w-24 rounded-lg overflow-hidden bg-slate-100 flex-shrink-0 mx-auto sm:mx-0">
-                          <Image src={item.image || "/placeholder.svg"} alt={item.name} fill className="object-cover" />
+                          <img src={item.image || "/placeholder.svg"} alt={item.name} fill className="object-cover" />
                         </div>
 
                         <div className="flex-1 text-center sm:text-left">
@@ -151,7 +150,7 @@ export default function CartPage() {
             {/* Order Summary Column - Takes 1/3 of the space on desktop */}
             <div className="lg:col-span-1">
               <div className="bg-white rounded-xl overflow-hidden shadow-sm border border-slate-100 lg:sticky lg:top-24">
-                <div className="bg-gradient-to-r from-primary/10 to-transparent px-6 py-3 border-b border-slate-100">
+                <div className="bg-gradient-to-l from-[#e1c3fd] to-transparent px-6 py-3 border-b border-slate-100">
                   <h3 className="font-semibold text-slate-800">Order Summary</h3>
                 </div>
 
