@@ -28,6 +28,7 @@ import Checkout from "./pages/Checkout/CheckoutPage";
 import WishlistPage from "./pages/Wishlist/Wishlist";
 import ProfileSidebar from "./pages/Profile/ProfileSidebar";
 import CartPage from "./pages/Cart/CartPage";
+import SearchPage from "./pages/Search/SearchPage";
 
 
 
@@ -133,5 +134,9 @@ export const router = createBrowserRouter([
       {path:'/profile/my-return', element:<MyReturn />},
       {path:'/profile/my-cancellation', element:<MyCancellations />},
     ]
+  },
+  {
+    path:'/search',
+    element:<SearchPage />
   }
 ])
