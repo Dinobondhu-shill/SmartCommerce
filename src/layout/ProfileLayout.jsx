@@ -8,16 +8,15 @@ const ProfileLayout = () => {
     return (
         <div>
              <Nav />
-             <div className='grid grid-cols-4 lg:px-24'>
-                <div className='col-span-1'>
+
+             <div className='md:grid grid-cols-4 lg:px-24'>
+                <div className='md:col-span-1'>
                     <ProfileSidebar />
                 </div>
-                <div className='col-span-3'>
+                <div className='w-full md:col-span-3 mb-10'>
                 <Outlet />
                 </div>
              </div>
-            
-             <Footer />
         </div>
     );
 };

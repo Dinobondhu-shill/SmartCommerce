@@ -3,7 +3,7 @@ import { CircleUser, House, MessageCircle, ShoppingCart, Store } from "lucide-re
 
 const MobileMenu = () => {
   return (
-    <div className="bg-white shadow-2xl h-[50px] w-full fixed bottom-0 flex md:hidden justify-between items-center px-2 z-[1000] border-t border-purple-400 rounded-tl-3xl rounded-tr-3xl">
+    <div className="bg-white shadow-2xl h-[50px] w-full fixed bottom-0 flex md:hidden justify-between items-center px-2 z-[500] border-t border-purple-400 rounded-tl-3xl rounded-tr-3xl">
       {[
         { to: "/messages", icon: <MessageCircle size={18} />, label: "Message" },
         { to: "/shops", icon: <Store size={18} />, label: "Shops" },

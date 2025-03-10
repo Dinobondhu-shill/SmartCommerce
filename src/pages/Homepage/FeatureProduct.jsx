@@ -87,15 +87,15 @@ export default function FeaturedProducts() {
           </div>
 
           <div className="grid gap-4 grid-cols-2 md:grid-cols-4 lg:grid-cols-6 border border-gray-300 p-3">
-  {/* First Div (Hero Section) */}
-  <div className="relative col-span-2 row-span-2 md:col-span-2 md:row-span-1 lg:col-span-3 bg-gradient-to-t from-purple-300 to-transparent text-center flex flex-col justify-end">
+  {/* First Div (Main Section) */}
+  <div className="relative col-span-2 md:col-span-2 lg:col-span-3 bg-gradient-to-b from-pink-200 to-transparent text-center flex flex-col justify-end">
     <img
-      src="https://i.ibb.co.com/dGb1pww/smar-watch.jpg?height=full&width=600"
-      alt="Destination Dresses"
+      src="https://i.ibb.co.com/dGb1pww/smar-watch.jpg?height=400&width=600"
+      alt="Sale & Service of Apple"
       className="w-full h-full object-cover rounded-md"
     />
-    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-      <h3 className="md:text-2xl font-extrabold tracking-widest mb-2 text-purple-600">DESTINATION DRESSES</h3>
+    <div className="absolute top-14 left-0 right-0 p-6 text-white">
+      <h3 className="md:text-2xl font-extrabold tracking-widest mb-2 text-purple-600">SALE & SERVICE OF APPLE</h3>
       <a href="#" className="text-blue-700 hover:text-blue-800 inline-flex items-center">
         See More
         <ChevronRight className="h-4 w-4 ml-1" />
@@ -103,29 +103,9 @@ export default function FeaturedProducts() {
     </div>
   </div>
 
-  {/* First Two Cards beside the First Div in Mobile, Inline in Large Devices */}
-  {weeklyProducts.slice(0, 2).map((product) => (
-    <Card key={product.id} className="flex items-center p-4 gap-2 col-span-1">
-      <img
-        src={product.image || "/placeholder.svg"}
-        alt={product.name}
-        width={80}
-        height={80}
-        className="object-cover rounded"
-      />
-      <div className="flex-1">
-        <h3 className="font-medium mb-2">{product.name}</h3>
-        <div className="flex items-center gap-2">
-          <span className="text-purple-600 font-bold">{formatPrice(product.price)}</span>
-          <span className="text-gray-400 line-through text-sm">{formatPrice(product.originalPrice)}</span>
-        </div>
-      </div>
-    </Card>
-  ))}
-
-  {/* Remaining Cards - Stack Below the First Div */}
-  <div className="col-span-2 md:col-span-4 lg:col-span-6 grid grid-cols-2 md:grid-cols-4 gap-4">
-    {weeklyProducts.slice(2).map((product) => (
+  {/* First Two Cards beside the Main Section in Mobile, Inline in Large Screens */}
+  <div className="col-span-2 md:col-span-2 lg:col-span-3 grid grid-cols-2 md:grid-cols-2 gap-4">
+    {featuredProducts.slice(0, 2).map((product) => (
       <Card key={product.id} className="flex items-center p-4 gap-2">
         <img
           src={product.image || "/placeholder.svg"}
@@ -136,15 +116,32 @@ export default function FeaturedProducts() {
         />
         <div className="flex-1">
           <h3 className="font-medium mb-2">{product.name}</h3>
-          <div className="flex items-center gap-2">
-            <span className="text-purple-600 font-bold">{formatPrice(product.price)}</span>
-            <span className="text-gray-400 line-through text-sm">{formatPrice(product.originalPrice)}</span>
-          </div>
+          <span className="text-purple-600 font-bold">{formatPrice(product.price)}</span>
+        </div>
+      </Card>
+    ))}
+  </div>
+
+  {/* Remaining Cards Below - Same Structure Across All Screens */}
+  <div className="col-span-2 md:col-span-4 lg:col-span-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+    {featuredProducts.slice(2).map((product) => (
+      <Card key={product.id} className="flex items-center p-4 gap-2">
+        <img
+          src={product.image || "/placeholder.svg"}
+          alt={product.name}
+          width={80}
+          height={80}
+          className="object-cover rounded"
+        />
+        <div className="flex-1">
+          <h3 className="font-medium mb-2">{product.name}</h3>
+          <span className="text-purple-600 font-bold">{formatPrice(product.price)}</span>
         </div>
       </Card>
     ))}
   </div>
 </div>
+
 
         </div>
 
@@ -176,8 +173,8 @@ export default function FeaturedProducts() {
           </div>
 
           <div className="grid gap-4 grid-cols-2 md:grid-cols-4 lg:grid-cols-6 border border-gray-300 p-3">
-  {/* First Div (Hero Section) */}
-  <div className="relative col-span-2 row-span-2 md:col-span-2 md:row-span-1 lg:col-span-3 bg-gradient-to-b from-pink-200 to-transparent text-center flex flex-col justify-end">
+  {/* First Div (Main Section) */}
+  <div className="relative col-span-2 md:col-span-2 lg:col-span-3 bg-gradient-to-b from-pink-200 to-transparent text-center flex flex-col justify-end">
     <img
       src="https://i.ibb.co.com/dGb1pww/smar-watch.jpg?height=400&width=600"
       alt="Sale & Service of Apple"
@@ -192,24 +189,26 @@ export default function FeaturedProducts() {
     </div>
   </div>
 
-  {/* First Two Cards beside the First Div in Mobile, Inline in Large Devices */}
-  {featuredProducts.slice(0, 2).map((product) => (
-    <Card key={product.id} className="flex items-center p-4 gap-2 col-span-1">
-      <img
-        src={product.image || "/placeholder.svg"}
-        alt={product.name}
-        width={80}
-        height={80}
-        className="object-cover rounded"
-      />
-      <div className="flex-1">
-        <h3 className="font-medium mb-2">{product.name}</h3>
-        <span className="text-purple-600 font-bold">{formatPrice(product.price)}</span>
-      </div>
-    </Card>
-  ))}
+  {/* First Two Cards beside the Main Section in Mobile, Inline in Large Screens */}
+  <div className="col-span-2 md:col-span-2 lg:col-span-3 grid grid-cols-2 md:grid-cols-2 gap-4">
+    {featuredProducts.slice(0, 2).map((product) => (
+      <Card key={product.id} className="flex items-center p-4 gap-2">
+        <img
+          src={product.image || "/placeholder.svg"}
+          alt={product.name}
+          width={80}
+          height={80}
+          className="object-cover rounded"
+        />
+        <div className="flex-1">
+          <h3 className="font-medium mb-2">{product.name}</h3>
+          <span className="text-purple-600 font-bold">{formatPrice(product.price)}</span>
+        </div>
+      </Card>
+    ))}
+  </div>
 
-  {/* Remaining Cards - Stack Below the First Div */}
+  {/* Remaining Cards Below - Same Structure Across All Screens */}
   <div className="col-span-2 md:col-span-4 lg:col-span-6 grid grid-cols-2 md:grid-cols-4 gap-4">
     {featuredProducts.slice(2).map((product) => (
       <Card key={product.id} className="flex items-center p-4 gap-2">
@@ -228,6 +227,7 @@ export default function FeaturedProducts() {
     ))}
   </div>
 </div>
+
 
         
         </div>

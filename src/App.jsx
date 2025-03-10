@@ -26,6 +26,7 @@ import GuestCheckout from "./pages/Checkout/GuestCheckout";
 import ProductPage from "./pages/Product/ProductDetails";
 import Checkout from "./pages/Checkout/CheckoutPage";
 import WishlistPage from "./pages/Wishlist/Wishlist";
+import ProfileSidebar from "./pages/Profile/ProfileSidebar";
 
 
 
@@ -121,7 +122,7 @@ export const router = createBrowserRouter([
     element:(<SidebarProvider className="block"> <ProfileLayout /></SidebarProvider>),
     errorElement:<ErrorPage />,
     children: [
-      { path:'/profile', element: <MyProfile /> },
+      {path:"/profile", element:<MyProfile />},
       {path:'/profile/address-book', element:<AddressBook />},
       {path:"/profile/wallet", element:<CustomerWallet />},
       {path:'/profile/my-return', element:<MyReturn />},
