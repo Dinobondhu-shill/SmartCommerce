@@ -18,7 +18,7 @@ const MyProfile = () => {
     gender: "male",
     receiveEmails: false,
     receiveSMS: false,
-    profileImage: "https://via.placeholder.com/200",
+    profileImage: "https://i.ibb.co.com/yyDgqrV/imgg.jpg",
   })
 
   const handleEdit = () => {

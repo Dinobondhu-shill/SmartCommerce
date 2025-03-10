@@ -82,9 +82,9 @@ const ProfileSidebar = () => {
       link: "/reviews",
     },
     {
-      name: "My Wishlist & Followed Stores",
-      icon: <FaHeart className="w-4 h-4" />,
-      link: "/wishlist",
+      name: "My Wallet",
+      icon: <FaWallet className="w-4 h-4" />,
+      link: "/profile/wallet",
     },
     {
       name: "Sell On Whatever",
@@ -170,8 +170,8 @@ const ProfileSidebar = () => {
   return (
     <>
       {/* Mobile Bottom Navigation */}
-      <div className="fixed bottom-0 z-[600] left-0 right-0 bg-white border-t border-gray-200">
-        <div className="flex justify-around items-center h-16">
+      <div className="fixed bottom-0 z-[600] left-0 right-0 bg-white border-purple-300 border-t rounded-tl-3xl rounded-tr-3xl">
+        <div className="flex justify-around items-center h-14">
           {mobileNavItems.map((item, index) => (
             <div key={index} className="flex flex-col items-center justify-center w-1/4">
               {item.action ? (

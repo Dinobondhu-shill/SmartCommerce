@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { FaWallet, FaPlus, FaMinus } from "react-icons/fa"
+import { BackToOptionsButton } from "./BackToOptions"
 
 const CustomerWallet = () => {
   const [balance, setBalance] = useState(5000) // Example balance in cents
@@ -60,8 +61,9 @@ const CustomerWallet = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 py-8 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen  py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
+        <BackToOptionsButton />
         <div className="bg-white shadow rounded-lg overflow-hidden">
           {/* Wallet Header */}
           <div className="bg-gradient-to-r from-purple-600 to-indigo-600 px-6 py-8 sm:p-10">

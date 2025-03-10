@@ -1,22 +1,16 @@
 "use client"
 
-export function BackToOptionsButton({ className, href = "/", onClick }) {
-  const handleClick = (e) => {
-    e.preventDefault()
-    if (onClick) {
-      onClick()
-    } else if (href) {
-      // Navigate to href - replace with your navigation method
-      window.location.href = href
-    }
-  }
+import { Link } from "react-router-dom"
+
+export function BackToOptionsButton() {
+
 
   return (
-    <button
-      onClick={handleClick}
+    <Link
+      to={'/'}
       className={`group text-purple-700 hover:text-purple-900 hover:bg-purple-50
         flex items-center gap-2 p-2 rounded-full
-        transition-all duration-300 ${className || ""}`}
+        transition-all duration-300 `}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +28,7 @@ export function BackToOptionsButton({ className, href = "/", onClick }) {
         <path d="M19 12H5" />
       </svg>
       <span className="font-medium">Back</span>
-    </button>
+    </Link>
   )
 }
 

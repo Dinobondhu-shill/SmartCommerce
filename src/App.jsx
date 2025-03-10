@@ -27,6 +27,7 @@ import ProductPage from "./pages/Product/ProductDetails";
 import Checkout from "./pages/Checkout/CheckoutPage";
 import WishlistPage from "./pages/Wishlist/Wishlist";
 import ProfileSidebar from "./pages/Profile/ProfileSidebar";
+import CartPage from "./pages/Cart/CartPage";
 
 
 
@@ -105,6 +106,10 @@ export const router = createBrowserRouter([
       {
         path:"/checkout",
         element:<Checkout />
+      },
+      {
+        path:"/cart",
+        element:<CartPage />
       },
       {
         path:"/guest-checkout",
