@@ -35,6 +35,7 @@ import SupportCenterPage from "./pages/Support/Support";
 import FeatureRecommendationPage from "./pages/Feature-recomendation/FeatureRecomendation";
 import HowToShopPage from "./pages/How-to-shop/HowToShop";
 import PaymentMethodsPage from "./pages/Payment/PaymentMethod";
+import MyPaymentsPage from "./pages/Profile/MyPayment";
 
 
 
@@ -154,6 +155,7 @@ export const router = createBrowserRouter([
       {path:"/profile/wallet", element:<CustomerWallet />},
       {path:'/profile/my-return', element:<MyReturn />},
       {path:'/profile/my-cancellation', element:<MyCancellations />},
+      {path:'/profile/my-payment', element:<MyPaymentsPage />}
     ]
   },
   {

@@ -49,7 +49,7 @@ const ProfileSidebar = () => {
         {
           name: "My Payment Options",
           icon: <FaCreditCard className="w-4 h-4" />,
-          link: "/payment",
+          link: "/profile/my-payment",
         },
         {
           name: "Whatever Wallet",
