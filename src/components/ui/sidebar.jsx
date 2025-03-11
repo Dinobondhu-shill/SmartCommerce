@@ -160,7 +160,7 @@ function Sidebar({
           data-sidebar="sidebar"
           data-slot="sidebar"
           data-mobile="true"
-          className="bg-gradient-to-br from-pink-300 to-purple-500 bg-opacity-20 backdrop-blur-sm text-white shadow-2xl  rounded-r-3xl  p-0 [&>button]:hidden"
+          className="bg-gradient-to-br from-pink-300 to-purple-500 bg-opacity-20 backdrop-blur-sm text-white shadow-2xl z-[999]  rounded-r-3xl  p-0 [&>button]:hidden"
           style={
             {
               "--sidebar-width": SIDEBAR_WIDTH_MOBILE

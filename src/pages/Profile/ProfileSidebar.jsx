@@ -170,7 +170,7 @@ const ProfileSidebar = () => {
   return (
     <>
       {/* Mobile Bottom Navigation */}
-      <div className="fixed bottom-0 z-[600] left-0 right-0 bg-white border-purple-300 border-t rounded-tl-3xl rounded-tr-3xl">
+      <div className="fixed bottom-0 z-[999] left-0 right-0 bg-white border-purple-300 border-t rounded-tl-3xl rounded-tr-3xl">
         <div className="flex justify-around items-center h-14">
           {mobileNavItems.map((item, index) => (
             <div key={index} className="flex flex-col items-center justify-center w-1/4">
@@ -201,7 +201,7 @@ const ProfileSidebar = () => {
 
       {/* Mobile Slide-in Menu */}
       <div
-        className={`fixed inset-0 bg-black bg-opacity-50 z-30 transition-opacity duration-300 ${
+        className={`fixed inset-0 bg-black bg-opacity-50 z-[999] transition-opacity duration-300 ${
           isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
         onClick={() => setIsMenuOpen(false)}

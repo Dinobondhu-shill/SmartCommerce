@@ -30,10 +30,10 @@ const Root = () => {
             </div>
           </div>
           <Footer />
-          <MobileMenu />
+          
         </SidebarInset>
       </SidebarProvider>
-     
+      <MobileMenu />
       </>
     );
 };

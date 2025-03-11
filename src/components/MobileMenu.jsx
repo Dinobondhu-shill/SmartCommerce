@@ -1,12 +1,12 @@
 import { NavLink } from "react-router-dom";
-import { CircleUser, House, MessageCircle, ShoppingCart, Store } from "lucide-react";
+import { CircleUser, House, MessageCircle, Search, ShoppingCart, Store } from "lucide-react";
 
 const MobileMenu = () => {
   return (
-    <div className="bg-white shadow-2xl h-[50px] w-full fixed bottom-0 flex md:hidden justify-between items-center px-2 z-[500] border-t border-purple-400 rounded-tl-3xl rounded-tr-3xl">
+    <div className="bg-gradient-to-b from-[#e2cdf6] to-[rgb(224,206,240)] shadow-2xl h-[50px] w-full fixed bottom-0 flex md:hidden justify-between items-center px-2 z-[500] border-t border-purple-400 rounded-tl-3xl rounded-tr-3xl">
       {[
         { to: "/messages", icon: <MessageCircle size={18} />, label: "Message" },
-        { to: "/shops", icon: <Store size={18} />, label: "Shops" },
+        { to: "/search", icon: <Search size={18} />, label: "Search" },
         { to: "/", icon: <House size={22} />, label: "Home", special: true },
         { to: "/cart", icon: <ShoppingCart size={18} />, label: "My Cart" },
         { to: "/profile", icon: <CircleUser size={18} />, label: "Account" }
