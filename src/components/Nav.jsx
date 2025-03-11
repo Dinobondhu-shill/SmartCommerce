@@ -49,9 +49,14 @@ const Nav = () => {
   </NavLink>
 
 </div>
+     <div className='flex items-center gap-3'>
+     <Link to="/wishlist">
+     <Heart />
+     </Link>
        <Link to='/search' className='flex gap-3 pr-3 md:hidden relative'>
        <Search  className=' right-4 text-[8px]'/>
        </Link>
+     </div>
        <MobileMenu />
        </div >
     );

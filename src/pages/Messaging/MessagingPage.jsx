@@ -21,10 +21,12 @@ import {
   X,
   ChevronRight,
   Plus,
+  Home,
 } from "lucide-react"
 import EmptyState from "./EmptyState"
 import NewMessageModal from "./NewMessageModal"
 import { useIsMobile } from "@/hooks/use-mobile"
+import { Link } from "react-router-dom"
 
 const MessagingPage = () => {
   const isMobile = useIsMobile()
@@ -365,9 +367,13 @@ const MessagingPage = () => {
               } w-full sm:w-80 md:w-96 bg-white border-r border-gray-200 flex flex-col shadow-lg`}
             >
               {/* Header */}
-              <div className="p-4 border-b border-gray-200 bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
+              <div className="p-4 border-b sticky top-0 border-gray-200 bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
                 <div className="flex items-center justify-between">
                   <h1 className="text-xl font-bold">Messages</h1>
+                  <div className="flex items-center gap-3">
+                    <Link to={'/'}>
+                    <Home className="h-5 w-5" />
+                    </Link>
                   <div className="flex items-center gap-2">
                     {isMobile && activeConversation && (
                       <button onClick={toggleSidebar} className="p-2 rounded-full hover:bg-white/10">
@@ -377,6 +383,7 @@ const MessagingPage = () => {
                     <button onClick={() => handleStartNewConversation()} className="p-2 rounded-full hover:bg-white/10">
                       <Plus className="h-5 w-5" />
                     </button>
+                  </div>
                   </div>
                 </div>
                 <div className="mt-4 relative">
