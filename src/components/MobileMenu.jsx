@@ -5,7 +5,7 @@ const MobileMenu = () => {
   return (
     <div className="bg-gradient-to-b from-[#e2cdf6] to-[rgb(224,206,240)] shadow-2xl h-[50px] w-full fixed bottom-0 flex md:hidden justify-between items-center px-2 z-[500] border-t border-purple-400 rounded-tl-3xl rounded-tr-3xl">
       {[
-        { to: "/messages", icon: <MessageCircle size={18} />, label: "Message" },
+        { to: "/message", icon: <MessageCircle size={18} />, label: "Message" },
         { to: "/search", icon: <Search size={18} />, label: "Search" },
         { to: "/", icon: <House size={22} />, label: "Home", special: true },
         { to: "/cart", icon: <ShoppingCart size={18} />, label: "My Cart" },

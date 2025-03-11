@@ -29,6 +29,8 @@ import WishlistPage from "./pages/Wishlist/Wishlist";
 import ProfileSidebar from "./pages/Profile/ProfileSidebar";
 import CartPage from "./pages/Cart/CartPage";
 import SearchPage from "./pages/Search/SearchPage";
+import MessagingPage from "./pages/Messaging/MessagingPage";
+import MessageLayout from "./layout/MessageLayout";
 
 
 
@@ -119,7 +121,8 @@ export const router = createBrowserRouter([
       {
         path:'/product-details',
         element:<ProductPage />
-      }
+      },  
+     
      
     ]
   },
@@ -138,5 +141,17 @@ export const router = createBrowserRouter([
   {
     path:'/search',
     element:<SearchPage />
+  },
+  {
+      path:"/message",
+      element:<MessageLayout />,
+      errorElement:<ErrorPage />,
+      children:[
+        {
+          path:"/message",
+          element:<MessagingPage />,
+        }
+      ]
   }
+
 ])
