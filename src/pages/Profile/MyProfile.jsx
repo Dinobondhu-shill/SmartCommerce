@@ -58,24 +58,8 @@ const MyProfile = () => {
           {/* Profile Header Section */}
           <div className="relative">
             {/* Cover Photo */}
-            <div className="h-32 bg-gradient-to-r from-purple-500 to-purple-300 relative">
-              <div className="absolute bottom-0 right-4 p-2 bg-white rounded-full shadow-md">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="text-purple-600"
-                >
-                  <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
-                  <circle cx="12" cy="13" r="3" />
-                </svg>
-              </div>
+            <div className="h-32 bg-gradient-to-r from-purple-500 to-purple-300">
+            <img src="https://i.ibb.co.com/VWm95BC9/Whats-App-Image-2025-03-11-at-23-42-49-2ccb2b26-1.jpg" className="h-32 object-cover w-full" alt="" />
             </div>
 
             {/* Profile Picture */}

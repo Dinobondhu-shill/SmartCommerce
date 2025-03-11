@@ -9,7 +9,7 @@ import { NavLink, Link } from 'react-router-dom';
 
 const Nav = () => {
     return (
-       <div className='flex sticky top-0 z-[500] bg-gradient-to-t from-[#e1c3fd] md:to-transparent border-purple-200 rounded-b-3xl rounded-tl-0  md:rounded-bl-0  items-center w-full  justify-between py-1.5' >
+       <div className='flex sticky top-0 z-[500] bg-gradient-to-t from-[#a573d3] md:to-transparent to-[#b171ed] border-purple-200 rounded-b-3xl rounded-tl-0  md:rounded-bl-0  items-center w-full  justify-between py-1.5' >
         <div className='md:pl-3 md:pt-2 flex gap-3'>
             <div className='block text-xl'>
             <SidebarTrigger className="-ml-0" />
@@ -49,11 +49,11 @@ const Nav = () => {
   </NavLink>
 
 </div>
-     <div className='flex items-center gap-3'>
+     <div className='flex items-center md:hidden gap-3'>
      <Link to="/wishlist">
      <Heart />
      </Link>
-       <Link to='/search' className='flex gap-3 pr-3 md:hidden relative'>
+       <Link to='/search' className='flex gap-3 pr-3  relative'>
        <Search  className=' right-4 text-[8px]'/>
        </Link>
      </div>
