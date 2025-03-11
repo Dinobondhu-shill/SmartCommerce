@@ -128,24 +128,24 @@ const Footer = () => {
             <h3 className="font-bold text-lg uppercase">Customer Service</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-sm hover:underline">
+                <Link to={'/payment-methods'} className="text-sm hover:underline">
                   Payment Methods
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-sm hover:underline">
+                <Link to={"/support"} className="text-sm hover:underline">
                   Support Center
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-sm hover:underline">
+                <Link to={'/how-to-shop'} className="text-sm hover:underline">
                   How To Shop On Whatever
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-sm hover:underline">
+                <Link to={'/feature-recommend'} className="text-sm hover:underline">
                   Featured Recommendation
-                </a>
+                </Link>
               </li>
               <li>
                 <Link to={"/refund-return"} className="text-sm hover:underline">

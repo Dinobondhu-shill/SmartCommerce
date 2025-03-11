@@ -31,6 +31,10 @@ import CartPage from "./pages/Cart/CartPage";
 import SearchPage from "./pages/Search/SearchPage";
 import MessagingPage from "./pages/Messaging/MessagingPage";
 import MessageLayout from "./layout/MessageLayout";
+import SupportCenterPage from "./pages/Support/Support";
+import FeatureRecommendationPage from "./pages/Feature-recomendation/FeatureRecomendation";
+import HowToShopPage from "./pages/How-to-shop/HowToShop";
+import PaymentMethodsPage from "./pages/Payment/PaymentMethod";
 
 
 
@@ -78,13 +82,27 @@ export const router = createBrowserRouter([
       },
       
       {
-        path:"/refund-return",
+        path:"/returns-refunds",
         element:<CancellationReturnRefund />
       },
-      // {
-      //   path:"/log-in",
-      //   element:<LoginPage />
-      // },
+      {
+        path:"/feature-recommend",
+        element:<FeatureRecommendationPage />
+      },
+      {
+        path:"/support",
+        element:<SupportCenterPage />
+      },
+      {
+        path:"/how-to-shop",
+        element:<HowToShopPage />
+      },
+      {
+        path:"/payment-methods",
+        element:<PaymentMethodsPage />
+      },
+     
+      
       {
         path:"/login",
         element:<LoginPage />
