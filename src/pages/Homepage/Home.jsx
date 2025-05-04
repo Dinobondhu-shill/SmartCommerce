@@ -4,6 +4,7 @@ import Categories from "./Categories";
 import ProductCard from "../Product/ProductCard";
 import TodaysDeals from "../Product/TodaysDeal";
 import FeaturedProducts from "./FeatureProduct";
+import ComboSection from "./ComboSection";
 
 const Home = () => {
   const banners = [
@@ -50,7 +51,7 @@ const banner2= [
       <h2 className="text-2xl md:text-3xl font-extrabold tracking-widest text-gray-800 mb-6">
         Top Products
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         <ProductCard />
         <ProductCard />
         <ProductCard />
@@ -62,6 +63,9 @@ const banner2= [
     </div>
     <div>
       <FeaturedProducts />
+    </div>
+    <div>
+      <ComboSection />
     </div>
     </div>
   );

@@ -137,13 +137,11 @@ export const router = createBrowserRouter([
         path:"/guest-checkout",
         element:<GuestCheckout />
       },
-      {
-        path:'/product-details',
-        element:<ProductPage />
-      },  
-     
-     
     ]
+  },
+  {
+    path:'/product-details',
+    element:<ProductPage />
   },
   {
     path: '/profile',
