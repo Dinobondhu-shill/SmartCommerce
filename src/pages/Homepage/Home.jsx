@@ -5,6 +5,8 @@ import ProductCard from "../Product/ProductCard";
 import TodaysDeals from "../Product/TodaysDeal";
 import FeaturedProducts from "./FeatureProduct";
 import ComboSection from "./ComboSection";
+import { Link } from "react-router-dom";
+import ProductFinderQuiz from "./ProductFinder";
 
 const Home = () => {
   const banners = [
@@ -64,8 +66,13 @@ const banner2= [
     <div>
       <FeaturedProducts />
     </div>
-    <div>
+    <div className="flex flex-col space-y-4 mb-5">
       <ComboSection />
+      <Link className="bg-purple-500 w-fit text-center mx-auto text-white font-medium text-xl px-5 py-2 rounded-2xl">View All Combo</Link>
+    </div>
+    {/* Product finder quiz */}
+    <div>
+      <ProductFinderQuiz />
     </div>
     </div>
   );

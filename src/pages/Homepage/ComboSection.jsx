@@ -96,9 +96,9 @@ export default function ComboSection() {
           </div>
 
           {/* Product selection */}
-          <div className="space-y-4">
+          <div className="space-y-2">
 
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-3 gap-2">
               {comboPackage.products.map((product) => (
                 <Card
                   key={product.id}
@@ -110,8 +110,8 @@ export default function ComboSection() {
                   )}
                   onClick={() => setSelectedProduct(product.id === selectedProduct ? null : product.id)}
                 >
-                  <CardContent className="p-3">
-                    <div className="relative aspect-square mb-3 overflow-hidden rounded-md">
+                  <CardContent className="p-2">
+                    <div className="relative aspect-square overflow-hidden rounded-md">
                       <img
                         src={product.image || "/placeholder.svg"}
                         alt={product.name}
@@ -126,8 +126,48 @@ export default function ComboSection() {
                 </Card>
               ))}
             </div>
+             {/* Product info card - always visible */}
+            <Card className="border-2 border-primary/10 my-5">
+              <CardContent className="p-3 px-5">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <h3 className="text-2xl font-bold">{comboPackage.name}</h3>
+                    <p className="text-muted-foreground mt-1">
+                      {comboPackage && comboPackage.description }
+                    </p>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-3xl font-bold text-purple-500">
+                      ${comboPackage && comboPackage.price.toFixed(2)}
+                    </div>
+                    {!currentProduct && (
+                      <Badge className="bg-green-100 text-purple-800 hover:bg-purple-100">Save 25%</Badge>
+                    )}
+                  </div>
+                </div>
 
-            <Card className="bg-muted/50 border-dashed border-2">
+                <div className="grid grid-cols-2 gap-5 mt-2">
+                  <Button
+                    variant="outline"
+                    className="flex items-center justify-center gap-2"
+                    onClick={handleAddToCart}
+                  >
+                    <ShoppingCart className="h-4 w-4" />
+                    Add to Cart
+                  </Button>
+                  <Button className="flex bg-purple-600 items-center justify-center gap-2" onClick={handleBuyNow}>
+                    <CreditCard className="h-4 w-4" />
+                    Buy Now
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+            
+          </div>
+          
+        </div>
+         
+          <Card className="bg-muted/50 border-dashed border-2">
               <CardContent className="p-4">
                 <div className="flex items-center justify-between">
                   <div>
@@ -146,44 +186,6 @@ export default function ComboSection() {
                       ).toFixed(2)}
                     </p>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-          {/* Product info card - always visible */}
-          <Card className="border-2 border-primary/10 my-5">
-              <CardContent className="p-3 px-5">
-                <div className="flex justify-between items-start">
-                  <div>
-                    <h3 className="text-2xl font-bold">{currentProduct ? currentProduct.name : comboPackage.name}</h3>
-                    <p className="text-muted-foreground mt-1">
-                      {currentProduct ? currentProduct.description : comboPackage.description}
-                    </p>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-3xl font-bold text-purple-500">
-                      ${currentProduct ? currentProduct.price.toFixed(2) : comboPackage.price.toFixed(2)}
-                    </div>
-                    {!currentProduct && (
-                      <Badge className="bg-green-100 text-purple-800 hover:bg-purple-100">Save 25%</Badge>
-                    )}
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-5 mt-2">
-                  <Button
-                    variant="outline"
-                    className="flex items-center justify-center gap-2"
-                    onClick={handleAddToCart}
-                  >
-                    <ShoppingCart className="h-4 w-4" />
-                    Add to Cart
-                  </Button>
-                  <Button className="flex items-center justify-center gap-2" onClick={handleBuyNow}>
-                    <CreditCard className="h-4 w-4" />
-                    Buy Now
-                  </Button>
                 </div>
               </CardContent>
             </Card>
