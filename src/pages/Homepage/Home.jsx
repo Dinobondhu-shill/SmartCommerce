@@ -7,6 +7,7 @@ import FeaturedProducts from "./FeatureProduct";
 import ComboSection from "./ComboSection";
 import { Link } from "react-router-dom";
 import ProductFinderQuiz from "./ProductFinder";
+import HypeDropSection from "./HypeDropSection";
 
 const Home = () => {
   const banners = [
@@ -73,6 +74,10 @@ const banner2= [
     {/* Product finder quiz */}
     <div>
       <ProductFinderQuiz />
+    </div>
+    {/*Hype drop section */}
+    <div>
+      <HypeDropSection />
     </div>
     </div>
   );
