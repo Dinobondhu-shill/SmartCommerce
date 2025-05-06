@@ -276,7 +276,7 @@ export default function HypeDropSection() {
   }
 
   return (
-    <section className="py-12 px-4 md:px-6 bg-gradient-to-br from-purple-900 via-purple-800 to-fuchsia-900 text-black overflow-hidden relative">
+    <section className="py-5 px-4 md:px-6 bg-gradient-to-br from-purple-900 via-purple-800 to-fuchsia-900 text-black overflow-hidden relative">
       <style>{confettiStyles}</style>
       <Confetti active={showConfetti} />
 
@@ -288,65 +288,47 @@ export default function HypeDropSection() {
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
-          <div>
-            <div className="flex items-center gap-2">
-              <Zap className="w-6 h-6 text-yellow-300" />
-              <h2 className="text-3xl font-bold tracking-tight">HYPE DROP</h2>
-            </div>
-            <p className="text-purple-200 mt-2">Exclusive drops. Limited time. Massive discounts.</p>
-          </div>
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-5 gap-4">
+        
 
           <Tabs defaultValue="current" value={activeTab} onValueChange={setActiveTab} className="w-full md:w-auto">
-            <TabsList className="bg-white/10 p-1 w-full md:w-auto grid grid-cols-3 gap-1">
-              <TabsTrigger value="current" className="data-[state=active]:bg-purple-600 data-[state=active]:text-black">
+            <TabsList className="bg-white/10 p-1 w-full md:w-auto grid grid-cols-2 gap-1">
+              <TabsTrigger value="current" className="data-[state=active]:bg-purple-600 text-white data-[state=active]:text-black">
                 Live Now
               </TabsTrigger>
               <TabsTrigger
                 value="upcoming"
-                className="data-[state=active]:bg-purple-600 data-[state=active]:text-black"
+                className="data-[state=active]:bg-purple-600 data-[state=active]:text-black text-white"
               >
                 Upcoming
               </TabsTrigger>
-              <TabsTrigger value="past" className="data-[state=active]:bg-purple-600 data-[state=active]:text-black">
-                Past Drops
-              </TabsTrigger>
+             
             </TabsList>
 
 
             <TabsContent value="current" className="mt-0 focus-visible:outline-none focus-visible:ring-0">
           <Card className="border-0 bg-gradient-to-r from-purple-700/50 to-fuchsia-700/50 backdrop-blur-sm overflow-hidden">
             <CardContent className="p-0">
-              <div className="grid md:grid-cols-2 gap-6 lg:gap-10">
+              <div className="grid md:grid-cols-2 gap-3 lg:gap-6">
                 {/* Product showcase */}
-                <div className="relative p-6 md:p-8 flex flex-col">
-                  <div className="flex justify-between items-start mb-4">
-                    <div>
-                      <Badge className="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-black px-3 py-1 text-xs font-semibold flex items-center gap-1">
+                <div className="relative p-1 md:p-4 flex flex-col">
+                <Badge className="bg-gradient-to-r mb-3 from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-black px-3 py-1 text-xs font-semibold flex items-center gap-1">
                         <Flame className="w-3 h-3" />
                         HOT DROP
                       </Badge>
-                      <h3 className="text-2xl md:text-3xl font-bold mt-3">{currentDrop.name}</h3>
-                      <p className="text-purple-200">{currentDrop.tagline}</p>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-sm text-purple-200">Starting at</div>
-                      <div className="text-2xl font-bold">${currentDrop.basePrice}</div>
-                    </div>
-                  </div>
 
-                  <div className="relative aspect-square rounded-lg overflow-hidden mb-4 bg-gradient-to-br from-purple-900 to-black">
+                  <div className="relative  rounded-lg overflow-hidden mb-4 bg-gradient-to-br from-purple-900 to-black">
                     <img
                       src={currentDrop.image || "/placeholder.svg"}
                       alt={currentDrop.name}
                       className="w-full h-full object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-purple-900/80 to-transparent flex flex-col justify-end p-4">
-                      <p className="text-black/90 text-sm md:text-base">{currentDrop.description}</p>
+                      <p className="text-black/90 font-medium text-sm md:text-base">{currentDrop.description}</p>
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-3 gap-3 mb-6">
+                  <div className="grid grid-cols-3 gap-3 mb-3">
                     {currentDrop.variants.map((variant, index) => (
                       <div
                         key={index}
@@ -361,80 +343,26 @@ export default function HypeDropSection() {
                     ))}
                   </div>
 
-                  <div className="mt-auto space-y-4">
-                    <div className="flex justify-between items-center">
-                      <div className="flex items-center gap-1">
-                        <Clock className="w-4 h-4 text-red-400" />
-                        <span className="text-sm">Ends in:</span>
-                      </div>
-                      <div className="flex gap-1 text-xl font-mono font-bold">
-                        <span className="bg-purple-800/50 px-2 py-1 rounded">{formatTime(timeLeft.hours)}</span>:
-                        <span className="bg-purple-800/50 px-2 py-1 rounded">{formatTime(timeLeft.minutes)}</span>:
-                        <span className="bg-purple-800/50 px-2 py-1 rounded">{formatTime(timeLeft.seconds)}</span>
-                      </div>
-                    </div>
-
-                    <div>
-                      <div className="flex justify-between items-center mb-1">
-                        <span className="text-sm">Remaining stock</span>
-                        <span className="text-sm font-semibold">
-                          {currentDrop.remainingStock}/{currentDrop.totalStock}
-                        </span>
-                      </div>
-                      <Progress
-                        value={stockPercentage}
-                        className="h-2 bg-purple-900"
-                        indicatorClassName={cn(
-                          "bg-gradient-to-r",
-                          stockPercentage > 50
-                            ? "from-green-500 to-green-400"
-                            : stockPercentage > 20
-                              ? "from-yellow-500 to-yellow-400"
-                              : "from-red-500 to-red-400",
-                        )}
-                      />
-                    </div>
-                  </div>
+                
                 </div>
 
                 {/* Interactive elements */}
-                <div className="bg-gradient-to-br from-purple-800/50 to-fuchsia-800/50 p-6 md:p-8 flex flex-col">
-                  <div className="mb-6">
-                    <div className="flex items-center gap-2 mb-4">
-                      <TrendingUp className="w-5 h-5 text-pink-400" />
-                      <h4 className="text-lg font-semibold">Trending Now</h4>
+                <div className="bg-gradient-to-br from-purple-800/50 to-fuchsia-800/50 p-3 md:p-6 flex flex-col">
+                  <div className="mb-4">
+                  <div className="flex justify-between items-start mb-4">
+                    <div>
+                   
+                      <h3 className="text-2xl md:text-3xl font-bold mt-3">{currentDrop.name}</h3>
+                      <p className="text-purple-200">{currentDrop.tagline}</p>
                     </div>
+                    <div className="text-right">
+                      <div className="text-sm text-purple-200">Starting at</div>
+                      <div className="text-2xl font-bold">${currentDrop.basePrice}</div>
+                    </div>
+                  </div>
 
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {currentDrop.influencers.map((influencer, index) => (
-                        <div
-                          key={index}
-                          className="flex items-center gap-2 bg-white/10 rounded-full pl-1 pr-3 py-1 text-sm"
-                        >
-                          <img
-                            src={influencer.image || "/placeholder.svg"}
-                            alt={influencer.name}
-                            className="w-6 h-6 rounded-full object-cover"
-                          />
-                          <span>{influencer.handle}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="flex justify-between text-sm mb-6">
-                      <div className="flex items-center gap-1">
-                        <div className="w-2 h-2 bg-pink-500 rounded-full"></div>
-                        <span>{currentDrop.socialCount.likes.toLocaleString()} likes</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                        <span>{currentDrop.socialCount.shares.toLocaleString()} shares</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                        <span>{currentDrop.socialCount.comments.toLocaleString()} comments</span>
-                      </div>
-                    </div>
+                    
+                    
                   </div>
 
                   {/* Discount wheel */}
@@ -495,7 +423,7 @@ export default function HypeDropSection() {
                     </div>
                   </div>
 
-                  <div className="mt-auto space-y-4">
+                  <div className="space-y-4">
                     <div className="grid grid-cols-2 gap-3">
                       <Button
                         className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-black"
@@ -557,21 +485,40 @@ export default function HypeDropSection() {
                       </Dialog>
                     </div>
 
-                    <div className="bg-purple-900/50 rounded-lg p-3 max-h-40 overflow-y-auto">
-                      <div className="flex items-center gap-2 mb-2">
-                        <MessageCircle className="w-4 h-4 text-purple-300" />
-                        <h5 className="text-sm font-semibold">Live Comments</h5>
+                    <div className="mt-auto space-y-4">
+                    <div className="flex justify-between items-center">
+                      <div className="flex items-center gap-1">
+                        <Clock className="w-4 h-4 text-red-400" />
+                        <span className="text-sm">Ends in:</span>
                       </div>
-                      <div className="space-y-2">
-                        {socialComments.map((comment, index) => (
-                          <div key={index} className="flex gap-2 text-sm">
-                            <span className="font-semibold text-purple-300">@{comment.user}:</span>
-                            <span className="text-black/90">{comment.comment}</span>
-                            <span className="ml-auto text-xs text-purple-400">{comment.time}</span>
-                          </div>
-                        ))}
+                      <div className="flex gap-1 text-xl font-mono font-bold">
+                        <span className="bg-purple-800/50 px-2 py-1 rounded">{formatTime(timeLeft.hours)}</span>:
+                        <span className="bg-purple-800/50 px-2 py-1 rounded">{formatTime(timeLeft.minutes)}</span>:
+                        <span className="bg-purple-800/50 px-2 py-1 rounded">{formatTime(timeLeft.seconds)}</span>
                       </div>
                     </div>
+
+                    <div>
+                      <div className="flex justify-between items-center mb-1">
+                        <span className="text-sm">Remaining stock</span>
+                        <span className="text-sm font-semibold">
+                          {currentDrop.remainingStock}/{currentDrop.totalStock}
+                        </span>
+                      </div>
+                      <Progress
+                        value={stockPercentage}
+                        className="h-2 bg-purple-900"
+                        indicatorClassName={cn(
+                          "bg-gradient-to-r",
+                          stockPercentage > 50
+                            ? "from-green-500 to-green-400"
+                            : stockPercentage > 20
+                              ? "from-yellow-500 to-yellow-400"
+                              : "from-red-500 to-red-400",
+                        )}
+                      />
+                    </div>
+                  </div>
                   </div>
                 </div>
               </div>
@@ -632,23 +579,7 @@ export default function HypeDropSection() {
           </div>
         </TabsContent>
 
-        <TabsContent value="past" className="mt-0 focus-visible:outline-none focus-visible:ring-0">
-          <div className="text-center py-12">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-purple-800/50 mb-4">
-              <Gift className="w-8 h-8" />
-            </div>
-            <h3 className="text-xl font-bold mb-2">Past Drops Sold Out!</h3>
-            <p className="text-purple-200 max-w-md mx-auto">
-              You missed our previous drops, but don't worry! New exclusive items are coming soon.
-            </p>
-            <Button
-              className="mt-6 bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-black"
-              onClick={() => setActiveTab("current")}
-            >
-              Check Current Drop
-            </Button>
-          </div>
-        </TabsContent>
+      
 
 
           </Tabs>
