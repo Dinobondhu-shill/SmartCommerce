@@ -8,6 +8,7 @@ import ComboSection from "./ComboSection";
 import { Link } from "react-router-dom";
 import ProductFinderQuiz from "./ProductFinder";
 import HypeDropSection from "./HypeDropSection";
+import SocialShoppingPulse from "./SocialShoppingSection";
 
 const Home = () => {
   const banners = [
@@ -39,6 +40,7 @@ const banner2= [
     <div>
         {/* Banner area  */}
       <div className="flex max-h-[150px] md:max-h-[320px] w-full overflow-hidden items-center ">
+        
         <div className="w-full md:w-[70%] flex-shrink-0 h-full">
         <Banner items={banners} />
         </div>
@@ -50,6 +52,9 @@ const banner2= [
       <div>
       <Categories />
       </div>
+      <div>
+      <HypeDropSection />
+    </div>
       <div className="container mx-auto px-4 py-8">
       <h2 className="text-2xl md:text-3xl font-extrabold tracking-widest text-gray-800 mb-6">
         Top Products
@@ -76,9 +81,7 @@ const banner2= [
       <ProductFinderQuiz />
     </div>
     {/*Hype drop section */}
-    <div>
-      <HypeDropSection />
-    </div>
+   <SocialShoppingPulse />
     </div>
   );
 };

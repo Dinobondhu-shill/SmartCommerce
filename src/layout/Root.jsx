@@ -16,10 +16,10 @@ const Root = () => {
     return (
         <>
      <ScrollToTop /> 
-        <SidebarProvider className="bg-gradient-to-b from-slate-50 to-slate-100">
-        <AppSidebar className="bg-gradient-to-b "/>
-        <SidebarInset className="bg-gradient-to-b from-slate-50 to-slate-100">
-          <header className="hidden md:flex h-8   shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-8">
+        <SidebarProvider className="">
+        <AppSidebar className="bg-gradient-to-bl from-purple-500 via-purple-400 to-purple-600 "/>
+        <SidebarInset className="my-0 ">
+          <header className="hidden md:flex h-8 shrink-0 items-center transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-8">
             
             <CustomNav />
           </header>
