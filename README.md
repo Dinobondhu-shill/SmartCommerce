@@ -1,12 +1,80 @@
-# React + Vite
+# Whatever – Multivendor E-Commerce Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Whatever** is a modern, fully-featured multivendor e-commerce frontend built with **React, Tailwind CSS, and ShadCN UI**. The platform provides a smooth, responsive, and engaging shopping experience, including user dashboards, vendor dashboards, a detailed admin panel, interactive features, and gamified user engagement tools.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Table of Contents
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Screenshots](#screenshots)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+
+### User-Facing Features
+- Responsive multivendor shopping interface  
+- Vendor dashboards for product management and order tracking  
+- Real-time messaging between users, vendors, and admin  
+- Product Finder Quiz for personalized recommendations  
+- Hot Drop Spin gamified reward feature  
+- Smooth UI, reusable components, and modern animations  
+
+### Admin Panel Features
+- Manage vendors and approve/reject products  
+- Track orders, sales, and analytics  
+- Monitor messaging between users and vendors  
+- Update and manage website content  
+- Fully responsive, clean, and user-friendly interface  
+
+---
+
+## Tech Stack
+- **Frontend:** React.js  
+- **UI & Styling:** Tailwind CSS, ShadCN UI  
+- **State Management:** React Hooks, Context API, Zustand (optional)  
+- **Routing:** React Router  
+- **API Communication:** Axios, Fetch API  
+- **Version Control:** Git & GitHub  
+
+---
+
+## Project Structure
+src/
+├── components/ # Reusable UI components
+├── pages/ # Page-level components
+├── layouts/ # Layouts for admin and user dashboards
+├── context/ # State management
+├── services/ # API calls (Axios)
+├── utils/ # Helper functions
+├── assets/ # Images, icons, styles
+└── App.jsx # Main entry point
+
+## Installation
+
+1. Clone the repository:  
+```bash
+git clone https://github.com/Dinobondhu-shill/SmartCommerce.git
+cd whatever
+npm install
+npm run dev
+```
+
+##Usage
+
+Browse and shop as a user across multiple vendors.
+
+Access vendor dashboards to manage products, orders, and customer interactions.
+
+Use the admin panel to manage vendors, track sales, and monitor messaging.
+
+Interact with features like Product Finder Quiz and Hot Drop Spin.
+
+Responsive design ensures smooth usage on all devices.
