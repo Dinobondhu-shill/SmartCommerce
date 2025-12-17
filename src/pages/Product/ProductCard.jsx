@@ -205,7 +205,7 @@ const ProductCard = () => {
           </div>
 
           {/* Product name */}
-          <Link to={`/products/${product.slug}`} className="block">
+          <Link to={`/product-details`} className="block">
             <h3 className="font-medium text-sm line-clamp-2 group-hover:text-purple-600 transition-colors min-h-[2.5rem]">
               {product.name}
             </h3>

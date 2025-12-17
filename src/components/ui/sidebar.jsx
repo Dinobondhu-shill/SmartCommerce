@@ -210,7 +210,7 @@ function Sidebar({
         {...props}>
         <div
           data-sidebar="sidebar"
-          className="w-full  bg-gradient-to-br from-pink-200 to-purple-500 bg-opacity-20 backdrop-blur-xl shadow-2xl  rounded-tr-3xl  group-data-[variant=floating]:border-none flex h-full  flex-col group-data-[variant=floating]:rounded-tr-lg group-data-[variant=floating] group-data-[variant=floating]:">
+          className="w-full  bg-gradient-to-tb from-fuchsia-300 via-purple-400 to-purple-600 border-purple-200 backdrop-blur-xl shadow-2xl  group-data-[variant=floating]:border-none flex h-full  flex-col group-data-[variant=floating]:rounded-tr-lg group-data-[variant=floating] group-data-[variant=floating]:">
           {children}
         </div>
       </div>

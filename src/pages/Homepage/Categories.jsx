@@ -54,7 +54,7 @@ const Categories = () => {
   const [showAll, setShowAll] = useState(false);
 
   return (
-    <div className="py-3 md:py-5 px-4">
+    <div className="py-3 md:py-8 px-4">
       {/* Title */}
       <h2 className="text-2xl md:text-3xl font-extrabold tracking-widest text-gray-800 mb-6">
         Our Collections
