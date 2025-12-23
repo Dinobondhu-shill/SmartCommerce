@@ -1,23 +1,23 @@
-"use client"
 
-import { useState } from "react"
-import { Link } from "react-router-dom"
+import {  useState } from "react"
+import { Link, Navigate } from "react-router-dom"
 import { Eye, EyeOff, LogIn, Home } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
 import AccountLinking from "../Utilites/AccountLinking"
+import axiosInstance from "@/config/AxiosInstance"
+import { useMutation } from "@tanstack/react-query"
+import { notyf } from "./Register"
+import { useAuth } from "@/hooks/useAuth"
+import Loader from "@/Loader/Loader"
 
 export default function LoginPage() {
+const {user, isLoading} = useAuth();
+
+console.log(user)
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -25,6 +25,29 @@ export default function LoginPage() {
   })
 
   const [showPassword, setShowPassword] = useState(false)
+  
+
+
+    const { mutate } = useMutation({
+      mutationFn: (userData) => axiosInstance.post("/auth/login", userData, { withCredentials: true }),
+  
+      onSuccess: (data) => {
+        notyf.success(`${data.data.message}`);
+  
+        // Reset form
+        setFormData({
+          email: "",
+          password: ""
+        });
+  
+      },
+  
+      onError: (data) => {
+        console.error("Login error:", data);
+        notyf.error(`${data.response.data.message}` || "Login failed, Please try again.");
+      }
+    });
+  
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target
@@ -37,32 +60,18 @@ export default function LoginPage() {
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log("Login form submitted:", formData)
-    // Handle login logic here
+    mutate(formData);
   }
 
-  return (
+
+  if (isLoading) return <Loader />;
+
+  if (user) {
+    return <Navigate to="/" replace />;
+  }
+   return (
     <div className="min-h-screen flex items-center justify-center md:justify-end md:gap-16 flex-wrap bg-gradient-to-b from-purple-50 to-blue-50 px-4 py-8">
       <div className=" flex-1   max-w-lg">
-        <Breadcrumb className="mb-6">
-          <BreadcrumbList>
-            <BreadcrumbItem>
-              <BreadcrumbLink as={Link} to="/">
-                <Home className="h-4 w-4" />
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbLink as={Link} to="/account">
-                ACCOUNT
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbLink>LOGIN</BreadcrumbLink>
-            </BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb>
-
         <Card className="border-none shadow-lg shadow-blue-100">
           <CardHeader className="bg-gradient-to-r from-violet-500 to-purple-500 py-4 text-white rounded-t-lg">
             <CardTitle className="flex items-center justify-center text-2xl font-bold">

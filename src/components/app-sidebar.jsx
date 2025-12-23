@@ -3,6 +3,7 @@ import {
   Cpu,
   Frame,
   GalleryVerticalEnd,
+  LogOut,
   Map,
   PieChart,
 } from "lucide-react"
@@ -18,14 +19,11 @@ import {
   SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar";
+import { useAuth } from "@/hooks/useAuth"
 
 // This is sample data.
 const data = {
-  user: {
-    name: "User Name",
-    email: "dinu.webdev@gmail.com",
-    avatar: "/avatars/shadcn.jpg",
-  },
+  
   shops: [
     {
       name: "Whatever",
@@ -183,16 +181,19 @@ const data = {
       url: "#",
       icon: Map,
     },
+    
   ],
 }
 
 export function AppSidebar({
+
   ...props
 }) {
+    const { user } = useAuth();
   return (
     <Sidebar  collapsible="icon" {...props}>
       <SidebarHeader>
-      <NavUser user={data.user} />
+      <NavUser user={user} />
         
       </SidebarHeader>
       <SidebarContent>

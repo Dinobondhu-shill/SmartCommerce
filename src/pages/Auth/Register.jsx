@@ -11,10 +11,13 @@ import "notyf/notyf.min.css"
 import SocialShare from "@/components/SocialShare"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import axiosInstance from "@/config/AxiosInstance"
+import { Link, Navigate } from "react-router-dom"
+import { useAuth } from "@/hooks/useAuth"
+import Loader from "@/Loader/Loader"
 
 
 
-const notyf = new Notyf({
+ export const notyf = new Notyf({
   position: { x: "right", y: "top" },
   types: [
     {
@@ -31,6 +34,8 @@ const notyf = new Notyf({
 })
 
 export default function RegisterPage() {
+const {user, isLoading} = useAuth();
+
   const [formData, setFormData] = useState({
     first_name: "",
     last_name: "",
@@ -44,7 +49,7 @@ export default function RegisterPage() {
 
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
+  const [Loading, setIsLoading] = useState(false)
   const [passwordStrength, setPasswordStrength] = useState(0)
  const queryClient =  useQueryClient()
 
@@ -55,7 +60,7 @@ export default function RegisterPage() {
 
     onSuccess: (data) => {
        console.log("Server response:", data);
-      notyf.success(`{data.data.message}`);
+      notyf.success(`${data.data.message}`);
 
       // Reset form
       setFormData({
@@ -74,8 +79,8 @@ export default function RegisterPage() {
     },
 
     onError: (data) => {
-      console.error("Registration error:", data.response.data.errors);
-      notyf.error("Registration failed. Try again.");
+      console.error("Registration error:", data);
+      notyf.error(`${data.response.data.message}` || "Registration failed. Please try again.");
     }
   });
 
@@ -137,18 +142,24 @@ export default function RegisterPage() {
 
   }
 
+  if (isLoading) return <Loader/>;
+
+  if (user) {
+    return <Navigate to="/" replace />;
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center px-4 py-8">
       <SocialShare />
       <div className="w-full max-w-xl ">
         {/* Header */}
-        <div className="text-center mb-5">
-          <h1 className="text-4xl font-bold text-slate-900 mb-3 tracking-tight">Create Account</h1>
-          <p className="text-slate-600 text-lg">Join us today and get started in minutes</p>
+        <div className="text-center p-2 bg-purple-600 rounded-t-2xl">
+          <h1 className="text-4xl font-bold text-white tracking-tight">Create Account</h1>
+          <p className="text-white text-lg">Join us today and get started in minutes</p>
         </div>
 
         {/* Form Card */}
-        <div className="bg-white rounded-2xl shadow-lg shadow-slate-200/50 p-8">
+        <div className="bg-white rounded-b-2xl shadow-lg shadow-slate-200/50 p-8">
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Name Fields */}
             <div className=" w-full space-y-5 flex justify-between md:flex-row md:space-y-0 md:space-x-4">
@@ -347,9 +358,9 @@ export default function RegisterPage() {
             {/* Login Link */}
             <p className="text-center text-slate-600 text-sm">
               Already have an account?{" "}
-              <a href="/login" className="text-purple-600 font-semibold hover:underline">
+              <Link to="/login" className="text-purple-600 font-semibold hover:underline">
                 Sign in
-              </a>
+              </Link>
             </p>
           </form>
         </div>

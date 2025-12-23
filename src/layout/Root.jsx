@@ -8,21 +8,29 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar"
+import { useAuth } from "@/hooks/useAuth";
+import Loader from "@/Loader/Loader";
 import Footer from "@/pages/Homepage/Footer";
 import ScrollToTop from "@/pages/Utilites/ScrollToTop";
 import { Outlet } from "react-router-dom";
 
 const Root = () => {
+const {user, isLoading} = useAuth();
+
+
+    if(isLoading) return <Loader />;
+
     return (
         <>
      <ScrollToTop /> 
         <SidebarProvider className="">
         <AppSidebar className="bg-gradient-to-bl from-purple-500 via-purple-400 to-purple-600 "/>
         <SidebarInset className="my-0 ">
-          <header className="hidden md:flex h-8 shrink-0 items-center transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-8">
+          {user ? '' : ( <header className="hidden md:flex h-8 shrink-0 items-center transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-8">
             
             <CustomNav />
-          </header>
+          </header>)}
+          
           <Nav />
           <div className="flex flex-1 flex-col">
             <div className="grid auto-rows-min grid-cols-1">

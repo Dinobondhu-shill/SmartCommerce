@@ -1,6 +1,7 @@
 "use client"
 
 import { useIsMobile } from "@/hooks/use-mobile"
+import { LogOutIcon } from "lucide-react"
 import { useState } from "react"
 import {
   FaUser,
@@ -138,6 +139,7 @@ const ProfileSidebar = () => {
                 </li>
               ))}
             </ul>
+            
           </div>
         ))}
 
@@ -161,6 +163,9 @@ const ProfileSidebar = () => {
               </NavLink>
             </div>
           ))}
+          <div className="border-b flex items-center gap-3 border-gray-200 mt "> <LogOutIcon /> 
+            <h5>Logout</h5>
+            </div>
         </div>
       </div>
     )

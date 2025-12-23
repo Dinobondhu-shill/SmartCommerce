@@ -36,6 +36,7 @@ import FeatureRecommendationPage from "./pages/Feature-recomendation/FeatureReco
 import HowToShopPage from "./pages/How-to-shop/HowToShop";
 import PaymentMethodsPage from "./pages/Payment/PaymentMethod";
 import MyPaymentsPage from "./pages/Profile/MyPayment";
+import UpdateProfile from "./layout/UpdateProfile";
 
 
 
@@ -171,6 +172,11 @@ export const router = createBrowserRouter([
           element:<MessagingPage />,
         }
       ]
+  },
+  {
+    path:'/v2/profile',
+    element:(<SidebarProvider className="block"> <UpdateProfile /></SidebarProvider>)
+
   }
 
 ])
