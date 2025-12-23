@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { HelmetProvider, Helmet } from "react-helmet-async"
 import {
   ChevronLeft,
   ChevronRight,
@@ -176,9 +175,9 @@ export default function ProductPage({ params }) {
   }
 
   return (
-    <HelmetProvider>
+    // <HelmetProvider>
       <div className="container mx-auto px-4 py-4 pb-24 md:pb-8">
-        <Helmet>
+        {/* <Helmet>
           <title>{product.metaTitle || product.name}</title>
           <meta name="description" content={product.metaDescription || product.shortDescription} />
           <meta name="keywords" content={product.metaKeywords || product.tags.join(", ")} />
@@ -195,7 +194,7 @@ export default function ProductPage({ params }) {
           <meta name="twitter:title" content={product.metaTitle || product.name} />
           <meta name="twitter:description" content={product.metaDescription || product.shortDescription} />
           <meta name="twitter:image" content={product.images[0]} />
-        </Helmet>
+        {/* </Helmet>  */}
 
         {/* Back button */}
         <Button
@@ -833,7 +832,7 @@ export default function ProductPage({ params }) {
           </div>
         </div>
       </div>
-    </HelmetProvider>
+    // </HelmetProvider>
   )
 }
 
