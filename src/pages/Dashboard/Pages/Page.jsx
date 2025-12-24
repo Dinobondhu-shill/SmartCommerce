@@ -33,10 +33,14 @@ export default function Page() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <Navigation currentPage={currentPage} onNavigate={setCurrentPage} />
+    <div className="min-h-screen bg-background flex flex-row">
+     <div className="w-1/4">
+       <Header />
+     </div>
+        <div className="flex-1 p-4">
+       <Navigation currentPage={currentPage} onNavigate={setCurrentPage} />
       <main className="transition-colors duration-300">{renderPage()}</main>
+     </div>
     </div>
   )
 }
