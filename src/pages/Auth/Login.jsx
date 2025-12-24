@@ -15,7 +15,7 @@ import { useAuth } from "@/hooks/useAuth"
 import Loader from "@/Loader/Loader"
 
 export default function LoginPage() {
-const {user, isLoading} = useAuth();
+const {user, isLoading, refetch} = useAuth();
 
 console.log(user)
   const [formData, setFormData] = useState({
@@ -33,6 +33,7 @@ console.log(user)
   
       onSuccess: (data) => {
         notyf.success(`${data.data.message}`);
+        refetch();
   
         // Reset form
         setFormData({
@@ -43,7 +44,6 @@ console.log(user)
       },
   
       onError: (data) => {
-        console.error("Login error:", data);
         notyf.error(`${data.response.data.message}` || "Login failed, Please try again.");
       }
     });

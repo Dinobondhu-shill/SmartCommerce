@@ -1,4 +1,4 @@
-import ActionButton from "./ActionButton";
+
 import OrdersCard from "./cards/OrdersCard";
 import ReviewCard from "./cards/ReviewCard";
 import UserInfoCard from "./cards/UserInfoCard";
@@ -25,11 +25,7 @@ export default function Dashboard({ onNavigate }) {
         </div>
       </div>
 
-      {/* Action Buttons - Mobile First Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3 mb-8">
-        <ActionButton label="Edit Info" variant="success" onClick={() => console.log("Edit")} />
-        <ActionButton label="Logout" variant="danger" onClick={() => console.log("Logout")} />
-      </div>
+     
 
       {/* Additional Info */}
       <div className="bg-white rounded-lg border border-border p-6 text-center">

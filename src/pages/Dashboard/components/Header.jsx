@@ -1,25 +1,52 @@
 import { useAuth } from "@/hooks/useAuth"
 import Loader from "@/Loader/Loader"
-import { useState } from "react"
+import UserInfoCard from "./cards/UserInfoCard"
+import ActionButton from "./ActionButton"
+import { Navigate, useNavigate } from "react-router-dom"
+import { useMutation } from "@tanstack/react-query"
+import axiosInstance from "@/config/AxiosInstance"
+import { notyf } from "@/pages/Auth/Register"
+import { useState} from "react"
+
+
 
 
 
 export default function Header() {
-  const {user, isLoading, refetch} = useAuth()
     const [profile, setProfile] = useState({
-      fullName: "Choncol Biswas",
-      email: "ch**********@gmail.com",
-      mobile: "+880 173*****79",
-      birthday: "",
-      gender: "male",
-      receiveEmails: false,
-      receiveSMS: false,
-      profileImage: "https://i.ibb.co.com/yyDgqrV/imgg.jpg",
-    })
+    fullName: "Choncol Biswas",
+    email: "ch**********@gmail.com",
+    mobile: "+880 173*****79",
+    birthday: "",
+    gender: "male",
+    receiveEmails: false,
+    receiveSMS: false,
+    profileImage: "https://i.ibb.co.com/yyDgqrV/imgg.jpg",
+  })
+  const navigate = useNavigate()
+  const {user, isLoading, refetch} = useAuth()
+  const { mutate } = useMutation({
+      mutationFn: () => axiosInstance.post("/auth/logout", { withCredentials: true }),
+  
+      onSuccess: (data) => {
+        notyf.success(`${data.data.message}`);
+        refetch();
+        navigate("/");
+      },
+  
+      onError: (data) => {
+        console.error("Logout error:", data);
+        notyf.error(`${data.response.data.message}` || "Logout failed, Please try again.");
+      }
+    });
 
     if(isLoading){
       return <Loader />
     }
+    if(!user){
+      return <Navigate to="/" />
+    }
+
 
   return (
     <header className="bg-white border-r sticky top-14 z-40 bg-gradient-to-r from-purple-500 to-purple-300">
@@ -62,13 +89,14 @@ export default function Header() {
             </div>
           </div>
       </div>
-      <div className="mt-20 text-center mb-6 pb-6">
-        <h2 className="text-2xl  pb-6 font-semibold text-gray-800">{user? user.name : "Unknown"}</h2>
-        <hr />
-      </div>  
-  <p className="text-gray-600">{user? user.email : "Email is not Provided"}</p>
+     <UserInfoCard user={user} />
+  
           
-
+ {/* Action Buttons - Mobile First Grid */}
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-2 gap-3 px-2.5 py-4 mb-8">
+        <ActionButton label="Edit Info" variant="success" onClick={() => console.log("Edit")} />
+        <ActionButton label="Logout" variant="danger" onClick={ () => mutate()} />
+      </div>
     </header>
   )
 }
